@@ -23,7 +23,7 @@ export default {
     {
       name: 'Pick up',
       url: '/pickup/list',
-      icon: 'icon-list'
+      icon: 'icon-home'
     }
   ],
 };
