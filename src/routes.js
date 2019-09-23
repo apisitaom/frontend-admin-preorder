@@ -1,5 +1,10 @@
 import React from 'react';
 
+const OrderList = React.lazy(() => import('../src/views/Pages/Order/List'))
+const SellerList = React.lazy(() => import('../src/views/Pages/Seller/List'))
+const PaymentList = React.lazy(() => import('../src/views/Pages/Payment/List'))
+const PickupList = React.lazy(() => import('../src/views/Pages/Pickup/List'))
+
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
 const Carousels = React.lazy(() => import('./views/Base/Carousels'));
@@ -79,6 +84,14 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
+  
+  
+  { path: '/order/list', exact: true, name: 'Order List', component: OrderList },
+  { path: '/seller/list', exact: true, name: 'Seller List', component: SellerList },
+  { path: '/payment/list', exact: true, name: 'Payment List', component: PaymentList },
+  { path: '/pickup/list', exact: true, name: 'Pickup List', component: PickupList },
+
+
 ];
 
 export default routes;
