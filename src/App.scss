@@ -9,3 +9,9 @@
 @import '~simple-line-icons/css/simple-line-icons.css';
 // Import Main styles for this application
 @import './scss/style.scss';
+
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap');
+*{
+  font-family: 'Bai Jamjuree', sans-serif;
+}
