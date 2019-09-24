@@ -79,7 +79,7 @@ export default class List extends Component {
                 // width: '25%',
                 render: (text, record, index) =>
                     <span>
-                        <Button type='link'>View detail</Button>
+                        <Button type='link' onClick={this.showModal}>View detail</Button>
                     </span>
             }
         ]
@@ -90,7 +90,7 @@ export default class List extends Component {
                     visible={this.state.visible}
                     onCancel={this.onCancel}
                     footer={null}
-                    width='70%'
+                    width='55%'
                     style={{ left: 70 }}
                 >
                     <Seller />
@@ -144,7 +144,6 @@ export default class List extends Component {
                     </Row>
                 </Card>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SELLERS" bordered={false}>
-                <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
                         columns={columns}
                     />
