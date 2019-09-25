@@ -8,7 +8,7 @@ export default class Seller extends Component {
                 <Row gutter={48}>
                     <Col span={8}>
                         <Row type="flex" style={{ justifyContent: 'center', borderStyle: 'groove' }}>
-                            <img src={pic} style={{ width: '70%' }} />
+                            <img src={pic} style={{ width: '70%' }} alt='seller-profile'/>
                         </Row>
                     </Col>
                     <Col span={16}>
