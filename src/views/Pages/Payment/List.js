@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Card, Table, Select, Row, Col, Input, Button } from 'antd'
+import { Card, Table, Select, Row, Col, Input, Button, Modal } from 'antd'
+import Payment from '../../../modalComponents/Payment'
 const { Option } = Select
 export default class List extends Component {
     state = {
         customername: '',
-        status: '0'
+        status: '0',
     }
     handleSelect = value => {
         this.setState({ status: value })
@@ -14,6 +15,12 @@ export default class List extends Component {
             customername: '',
             status: '0'
         })
+    }
+    showModal = () => {
+        this.setState({visible: true})
+    }
+    onCancel = () => {
+        this.setState({visible: false})
     }
     render() {
         const columns = [
@@ -45,7 +52,7 @@ export default class List extends Component {
                 //     <p key={index}>{text}</p>
             },
             {
-                title: 'เลือกสถานะการชำระเงิน',
+                title: 'สถานะการชำระเงิน',
                 // dataIndex: 'proname',
                 // key: 'proname',
                 // width: '20%',
@@ -63,6 +70,17 @@ export default class List extends Component {
         ]
         return (
             <div>
+                <Modal
+                    // title={this.state.machine ? this.state.machine[0].machine_id : ''}
+                    visible={this.state.visible}
+                    onCancel={this.onCancel}
+                    footer={null}
+                    width='60%'
+                    style={{ left: 70 }}
+                >
+                    <Payment />
+                    {/* {this.state.product ? <Product product={this.state.product} options={this.state.options} /> : ''} */}
+                </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SEARCH" bordered={false}>
                     <Row gutter={24} style={{ marginBottom: '1%' }}>
                         <Col span={12}>
@@ -97,6 +115,7 @@ export default class List extends Component {
                     </Row>
                 </Card>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="ORDERS" bordered={false}>
+                    <Button type='link' onClick={this.showModal}>view datail</Button>
                     <Table
                         columns={columns}
                     />
