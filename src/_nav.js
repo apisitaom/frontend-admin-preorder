@@ -10,11 +10,11 @@ export default {
       url: '/seller/list',
       icon: 'icon-people'
     },
-    {
-      name: 'Order',
-      url: '/order/list',
-      icon: 'icon-basket-loaded'
-    },
+    // {
+    //   name: 'Order',
+    //   url: '/order/list',
+    //   icon: 'icon-basket-loaded'
+    // },
     {
       name: 'Payment',
       url: '/payment/list',
