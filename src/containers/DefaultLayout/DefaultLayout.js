@@ -30,6 +30,7 @@ class DefaultLayout extends Component {
 
   signOut(e) {
     e.preventDefault()
+    sessionStorage.removeItem('access_token')
     this.props.history.push('/login')
   }
 
@@ -63,9 +64,9 @@ class DefaultLayout extends Component {
                         path={route.path}
                         exact={route.exact}
                         name={route.name}
-                        render={props => (
-                          <route.component {...props} />
-                        )} />
+                        render={props => 
+                          sessionStorage.getItem('access_token') ?  <route.component {...props} /> : <Redirect from={route.path} to="/login" />
+                        } />
                     ) : (null);
                   })}
                   <Redirect from="/" to="/dashboard" />
