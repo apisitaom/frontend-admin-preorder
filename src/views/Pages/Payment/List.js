@@ -114,11 +114,19 @@ export default class List extends Component {
                         </Col>
                     </Row>
                 </Card>
-                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="ORDERS" bordered={false}>
-                    <Button type='link' onClick={this.showModal}>view datail</Button>
-                    <Table
-                        columns={columns}
-                    />
+                <Card>
+                    <Row>
+                        <Col span={12}>
+                            <Table 
+                                columns={columns}
+                            />
+                        </Col>
+                        <Col span={12}>
+                            <Table 
+                                columns={columns}
+                            />
+                        </Col>
+                    </Row>
                 </Card>
             </div>
         )

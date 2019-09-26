@@ -8,6 +8,9 @@ export default class List extends Component {
         email: '',
         status: 'non'
     }
+    UNSAFE_componentWillMount () {
+    
+    }
     selectOnChange = value => {
         this.setState({status: value})
     }
@@ -57,7 +60,7 @@ export default class List extends Component {
                 //     <p key={index}>{text}</p>
             },
             {
-                title: 'Email',
+                title: 'อีเมล',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
                 // width: '25%',
@@ -65,7 +68,7 @@ export default class List extends Component {
                 //     <p key={index}>{text}</p>
             },
             {
-                title: 'Active',
+                title: 'เบอร์โทรศัพท์',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
                 // width: '25%',
@@ -73,7 +76,7 @@ export default class List extends Component {
                 //     <p key={index}>{text}</p>
             },
             {
-                title: 'Action',
+                title: 'สถานะ',
                 // dataIndex: 'dateend',
                 // key: 'dateend',
                 // width: '25%',

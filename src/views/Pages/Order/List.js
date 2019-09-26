@@ -52,6 +52,7 @@ export default class List extends Component {
             }
         ]
         return (
+            
             <div>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SEARCH" bordered={false}>
                     <Row gutter={24} style={{ marginBottom: '1%' }}>
@@ -80,10 +81,19 @@ export default class List extends Component {
                         </Col>
                     </Row>
                 </Card>
-                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="ORDERS" bordered={false}>
-                    <Table
-                        columns={columns}
-                    />
+                <Card>
+                    <Row>
+                        <Col span={12}>
+                            <Table 
+                                columns={columns}
+                            />
+                        </Col>
+                        <Col span={12}>
+                            <Table 
+                                columns={columns}
+                            />
+                        </Col>
+                    </Row>
                 </Card>
             </div>
         )

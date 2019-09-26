@@ -85,7 +85,7 @@ const routes = [
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   
-  
+
   { path: '/order/list', exact: true, name: 'Order List', component: OrderList },
   { path: '/seller/list', exact: true, name: 'Seller List', component: SellerList },
   { path: '/payment/list', exact: true, name: 'Payment List', component: PaymentList },
