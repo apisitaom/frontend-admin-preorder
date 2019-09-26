@@ -21,6 +21,16 @@ export default {
       icon: 'icon-wallet'
     },
     {
+      name: 'Shipping',
+      url: '/shipping/list',
+      icon: 'icon-shuffle'
+    },
+    {
+      name: 'Recieved',
+      url: '/recieved/list',
+      icon: 'icon-briefcase'
+    },
+    {
       name: 'Pick up',
       url: '/pickup/list',
       icon: 'icon-home'

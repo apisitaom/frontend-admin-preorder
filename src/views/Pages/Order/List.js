@@ -84,11 +84,13 @@ export default class List extends Component {
                 <Card>
                     <Row>
                         <Col span={12}>
+                            รายการสั่งซื้อทั้งหมด
                             <Table 
                                 columns={columns}
                             />
                         </Col>
                         <Col span={12}>
+                            รายการออเดอร์ที่ผู้ซื้อทำการชำระเเล้ว
                             <Table 
                                 columns={columns}
                             />

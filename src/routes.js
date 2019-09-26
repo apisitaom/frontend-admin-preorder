@@ -4,6 +4,8 @@ const OrderList = React.lazy(() => import('../src/views/Pages/Order/List'))
 const SellerList = React.lazy(() => import('../src/views/Pages/Seller/List'))
 const PaymentList = React.lazy(() => import('../src/views/Pages/Payment/List'))
 const PickupList = React.lazy(() => import('../src/views/Pages/Pickup/List'))
+const RecievedList = React.lazy(() => import('../src/views/Pages/Recieved/List'))
+const ShippingList = React.lazy(() => import('../src/views/Pages/Shipping/List'))
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -90,7 +92,8 @@ const routes = [
   { path: '/seller/list', exact: true, name: 'Seller List', component: SellerList },
   { path: '/payment/list', exact: true, name: 'Payment List', component: PaymentList },
   { path: '/pickup/list', exact: true, name: 'Pickup List', component: PickupList },
-
+  { path: '/shipping/list', exact: true, name: 'Shipping List', component: ShippingList},
+  { path: '/recieved/list', exact: true, name: 'Recieved List', component: RecievedList}
 
 ];
 
