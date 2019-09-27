@@ -1,21 +1,32 @@
 import React, { Component } from 'react'
-import { Card, Table, Button, Input, Row, Col, DatePicker, Select, Modal } from 'antd'
+import { Card, Table, Button, Input,Form , Row, Col, DatePicker, Select, Modal } from 'antd'
 import Seller from '../../../modalComponents/Seller'
+import { 
+    sellersGet,
+ } from "../../../services/API";
 const { Option } = Select
-export default class List extends Component {
+export class List extends Component {
     state = {
+        sellers: [],
         shopname: '',
         email: '',
-        status: 'non'
+        status: 'non',
+
     }
-    UNSAFE_componentWillMount () {
-    
+    componentWillMount () {
+        this.getSeller();
+    }
+    getSeller = async () => {
+        const get = await sellersGet();
+        this.setState({
+            sellers: get.data,
+        });
     }
     selectOnChange = value => {
         this.setState({status: value})
     }
     dateOnChange = (date, dateString) => {
-        this.setState({date: dateString},()=>console.log(this.state.date))
+        this.setState({date: dateString})
     }
     clearSearchData = () =>{
         this.setState({
@@ -24,8 +35,12 @@ export default class List extends Component {
             status:'non'
         })
     }
-    showModal = () => {
-        this.setState({visible: true})
+    showModal = async (index) => {
+        this.setState({
+            seller: this.state.sellers[index],
+            visible: true
+        })
+        
     }
     onCancel = () => {
         this.setState({visible: false})
@@ -45,58 +60,59 @@ export default class List extends Component {
             },
             {
                 title: 'วันลงทะเบียน',
-                dataIndex: 'proname',
-                key: 'proname',
-                // width: '20%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
+                dataIndex: 'createdate',
+                key: 'createdate',
             },
             {
                 title: 'ชื่อร้านค้า',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
+                dataIndex: 'sellername',
+                key: 'sellername',
             },
             {
                 title: 'อีเมล',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
+                dataIndex: 'email',
+                key: 'email',
             },
             {
                 title: 'เบอร์โทรศัพท์',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
+                dataIndex: 'phonenumber',
+                key: 'phonenumber',
+            },
+            {
+                title: 'รายละเอียด',
+                dataIndex: '',
+                key: '',
+                textAlign: 'center',
+                render: (text, record, index) =>
+                    <span>
+                        <Button type='link' onClick={()=>this.showModal(index)}>ดู</Button>
+                    </span>
             },
             {
                 title: 'สถานะ',
-                // dataIndex: 'dateend',
-                // key: 'dateend',
-                // width: '25%',
-                render: (text, record, index) =>
-                    <span>
-                        <Button type='link' onClick={this.showModal}>View detail</Button>
-                    </span>
+                key: 'active',
+                render: (text, record) => 
+                (
+                    <Select
+                    value={String(record.active)}
+                    >   
+                        <Option key={"true"}>active</Option>
+                        <Option key={"false"}>inactive</Option>
+                    </Select>
+                )          
             }
         ]
         return (
             <div>
                 <Modal
-                    // title={this.state.machine ? this.state.machine[0].machine_id : ''}
+                    title={this.state.seller ? this.state.seller.sellername : ''}
                     visible={this.state.visible}
                     onCancel={this.onCancel}
                     footer={null}
                     width='55%'
                     style={{ left: 70 }}
-                >
-                    <Seller />
+                >  
+                    <Seller seller={this.state.seller}></Seller>
                     {/* {this.state.product ? <Product product={this.state.product} options={this.state.options} /> : ''} */}
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SEARCH" bordered={false}>
@@ -149,6 +165,7 @@ export default class List extends Component {
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SELLERS" bordered={false}>
                 <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
+                        dataSource = {this.state.sellers}
                         columns={columns}
                     />
                 </Card>
@@ -156,3 +173,7 @@ export default class List extends Component {
         )
     }
 }
+
+const sell = Form.create({ name: 'dynamic_rule'})(List);
+
+export default sell

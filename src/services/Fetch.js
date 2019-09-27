@@ -23,7 +23,6 @@ export const Fetch = async (method = "POST", token, path, data ={}) => {
 
 export const FetchForm = async (method="POST",token, path, data={} ) =>{
     try {
-        
         const url = apiurl+path
         const res = await fetch(url, {
             headers: {

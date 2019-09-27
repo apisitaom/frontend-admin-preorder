@@ -81,21 +81,11 @@ export default class List extends Component {
                         </Col>
                     </Row>
                 </Card>
-                <Card>
-                    <Row>
-                        <Col span={12}>
-                            รายการสั่งซื้อทั้งหมด
-                            <Table 
-                                columns={columns}
-                            />
-                        </Col>
-                        <Col span={12}>
-                            รายการออเดอร์ที่ผู้ซื้อทำการชำระเเล้ว
-                            <Table 
-                                columns={columns}
-                            />
-                        </Col>
-                    </Row>
+                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="ORDER" bordered={false}>
+                <Button type='link' onClick={this.showModal}>View detail</Button>
+                    <Table
+                        columns={columns}
+                    />
                 </Card>
             </div>
         )

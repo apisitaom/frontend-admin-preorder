@@ -16,10 +16,10 @@ class Login extends Component {
       await sessionStorage.setItem("access_token", resp.token);
       await message.success('Login success, Please wait')
       await window.location.replace("/#/");
-    }else{
+    } else {
       await message.error('Login failed, Please try again.')
     }
-  }
+  } 
   render() {
     return (
       <div className="app flex-row align-items-center">
