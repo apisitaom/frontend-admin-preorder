@@ -48,46 +48,31 @@ export default class List extends Component {
                 dataIndex: 'proname',
                 key: 'proname',
                 // width: '20%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'ชื่อร้านค้า',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'อีเมล',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'เบอร์โทรศัพท์',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'รายละเอียด',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'สถานะการรับสินค้า',
                 // dataIndex: 'dateend',
                 // key: 'dateend',
-                // width: '25%',
                 render: (text, record, index) =>
                     <span>
                         <Button type='link' onClick={this.showModal}>View detail</Button>

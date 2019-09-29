@@ -44,6 +44,11 @@ export default class List extends Component {
                 // key: 'proname',
             },
             {
+                title: 'สถานะออเดอร์',
+                // dataIndex: 'proname',
+                // key: 'proname',
+            },
+            {
                 title: 'รายละเอีด',
                 // dataIndex: 'proname',
                 // key: 'proname',
