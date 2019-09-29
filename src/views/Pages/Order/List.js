@@ -19,36 +19,34 @@ export default class List extends Component {
                 )
             },
             {
-                title: 'ชื่อลูกค้า',
+                title: 'วันที่สั่งสินค้า',
                 // dataIndex: 'proname',
                 // key: 'proname',
-                // width: '20%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
-                title: 'จำนวนเงิน(บาท)',
+                title: 'ลูกค้าที่สั่งซื้อ',
                 // dataIndex: 'proname',
                 // key: 'proname',
-                // width: '20%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
-                title: 'เลือกสถานะการชำระเงิน',
+                title: 'จำนวนสินค้าที่สั่ง',
                 // dataIndex: 'proname',
                 // key: 'proname',
-                // width: '20%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
-                title: 'View detail',
+                title: 'ราคารวมสินค้า',
                 // dataIndex: 'proname',
                 // key: 'proname',
-                // width: '20%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
+            },
+            {
+                title: 'ชื่อร้านค้า',
+                // dataIndex: 'proname',
+                // key: 'proname',
+            },
+            {
+                title: 'รายละเอีด',
+                // dataIndex: 'proname',
+                // key: 'proname',
             }
         ]
         return (

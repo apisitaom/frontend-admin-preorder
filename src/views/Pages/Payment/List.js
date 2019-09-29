@@ -39,47 +39,31 @@ export default class List extends Component {
                 title: 'วันที่จ่ายสินค้า',
                 // dataIndex: 'proname',
                 // key: 'proname',
-                // width: '20%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'ชื่อร้านค้า',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'จำนวนสินค้าที่สั่ง',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'ชื่อลูกค้าที่สั่งซื้อ',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'รายละเอียด',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
-                // width: '25%',
-                // render: (text, record, index) =>
-                //     <p key={index}>{text}</p>
             },
             {
                 title: 'สถานะการจ่ายตังค์',
                 // dataIndex: 'dateend',
                 // key: 'dateend',
-                // width: '25%',
                 render: (text, record, index) =>
                     <span>
                         <Button type='link' onClick={this.showModal}>View detail</Button>

@@ -39,8 +39,7 @@ export class List extends Component {
         this.setState({
             seller: this.state.sellers[index],
             visible: true
-        })
-        
+        });
     }
     onCancel = () => {
         this.setState({visible: false})
