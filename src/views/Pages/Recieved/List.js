@@ -4,6 +4,7 @@ import Seller from '../../../modalComponents/Seller'
 const { Option } = Select
 export default class List extends Component {
     state = {
+        recieveds: [],
         shopname: '',
         email: '',
         status: 'non'

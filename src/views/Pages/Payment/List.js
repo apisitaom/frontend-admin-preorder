@@ -4,6 +4,7 @@ import Payment from '../../../modalComponents/Payment'
 const { Option } = Select
 export default class List extends Component {
     state = {
+        payments: [],
         customername: '',
         status: '0',
     }

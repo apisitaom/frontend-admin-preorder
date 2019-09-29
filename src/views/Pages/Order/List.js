@@ -3,6 +3,7 @@ import { Card, Table, Select, Row, Col, Input, Button } from 'antd'
 const { Option } = Select
 export default class List extends Component {
     state = {
+        orders: [],
         customername: '',
     }
     render() {
@@ -44,12 +45,12 @@ export default class List extends Component {
                 // key: 'proname',
             },
             {
-                title: 'สถานะออเดอร์',
+                title: 'รายละเอียด',
                 // dataIndex: 'proname',
                 // key: 'proname',
             },
             {
-                title: 'รายละเอีด',
+                title: 'สถานะออเดอร์',
                 // dataIndex: 'proname',
                 // key: 'proname',
             }

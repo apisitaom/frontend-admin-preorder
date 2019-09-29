@@ -44,6 +44,12 @@ export class List extends Component {
     onCancel = () => {
         this.setState({visible: false})
     } 
+    changeStatus = async index => {
+        const data = {
+            id: index
+        }
+        // API for Update STATUS
+    }
     render() {
         const columns = [
             {
@@ -94,6 +100,7 @@ export class List extends Component {
                 (
                     <Select
                     value={String(record.active)}
+                    onChange={() => this.changeStatus(record.id)}
                     >   
                         <Option key={"true"}>active</Option>
                         <Option key={"false"}>inactive</Option>
