@@ -9,8 +9,7 @@ export const sellersGet = async (data, token = "") => {
     const res = await Fetch("GET", token, `/seller/all`, data);
     return res;
 };
-export const sellerGet = async (data) => {
-    console.log(data);
-    const res = await Fetch("GET", `/seller/list/`, `${data.id}`);
+export const sellerRole = async (data, token = "") => {
+    const res = await Fetch("POST", token, `/seller/role`, data);
     return res;
 };

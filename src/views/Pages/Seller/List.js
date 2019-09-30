@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
-import { Card, Table, Button, Input,Form , Row, Col, DatePicker, Select, Modal } from 'antd'
+import { Card, Table, Button, Input,Form , Row, Col, DatePicker, Select, Modal} from 'antd' 
 import Seller from '../../../modalComponents/Seller'
 import { 
     sellersGet,
+    sellerRole
  } from "../../../services/API";
 const { Option } = Select
+const { confirm } = Modal
 export class List extends Component {
     state = {
         sellers: [],
         shopname: '',
         email: '',
         status: 'non',
-
+        active: false,
+        updateSeller: []
     }
     componentWillMount () {
         this.getSeller();
@@ -44,11 +47,20 @@ export class List extends Component {
     onCancel = () => {
         this.setState({visible: false})
     } 
-    changeStatus = async index => {
+    
+    changeStatus = async (index, e) => {
         const data = {
-            id: index
+            sellerid: index.sellerid,
+            active: e
         }
-        // API for Update STATUS
+        confirm({
+            title: 'update seller role',
+            onOk: () => this.onUpdateSellerRole(data)
+        })
+    }
+    onUpdateSellerRole = async data =>{
+        await sellerRole(data);
+        await window.location.reload();
     }
     render() {
         const columns = [
@@ -96,16 +108,17 @@ export class List extends Component {
             {
                 title: 'สถานะ',
                 key: 'active',
-                render: (text, record) => 
-                (
+                render: (text, record, index) => 
+              { 
+                  return (
                     <Select
                     value={String(record.active)}
-                    onChange={() => this.changeStatus(record.id)}
+                    onChange={(e) => this.changeStatus(record, e)}
                     >   
                         <Option key={"true"}>active</Option>
                         <Option key={"false"}>inactive</Option>
                     </Select>
-                )          
+                )}          
             }
         ]
         return (
