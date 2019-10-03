@@ -6,7 +6,6 @@ import {
     sellerRole
  } from "../../../services/API";
 const { Option } = Select
-const { confirm } = Modal
 export class List extends Component {
     state = {
         sellers: [],
@@ -53,7 +52,7 @@ export class List extends Component {
             sellerid: index.sellerid,
             active: e
         }
-        confirm({
+        Modal.confirm({
             title: 'update seller role',
             onOk: () => this.onUpdateSellerRole(data)
         })
