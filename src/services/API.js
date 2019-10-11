@@ -32,7 +32,7 @@ export const paymentPay = async (data, token = "") => {
     return res;
 };
 //------------------ RECIEVE -------------------//
-export const paymentRecieve = async (data, token = "") => {
+export const shippingRecieve = async (data, token = "") => {
     const res = await Fetch("GET", token, `/shipping/recieve`, data);
     return res;
 };
