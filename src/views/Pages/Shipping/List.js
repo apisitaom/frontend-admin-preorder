@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import { Card, Table, Button, Input, Row, Col, DatePicker, Select, Modal } from 'antd'
 import Seller from '../../../modalComponents/Seller'
+import { 
+    shippigGet
+ } from '../../../services/API'
 const { Option } = Select
 export default class List extends Component {
     state = {
         shippings: [],
-        shopname: '',
-        email: '',
-        status: 'non'
     }
     UNSAFE_componentWillMount () {
-    
+    this.getShipping();
+    }
+    getShipping = async () => {
+        const get = await shippigGet();
+        this.setState({
+            shippings: get.data
+        });
     }
     selectOnChange = value => {
         this.setState({status: value})
@@ -46,36 +52,41 @@ export default class List extends Component {
             },
             {
                 title: 'วันที่จัดส่งสินค้า',
-                // dataIndex: 'proname',
-                // key: 'proname',
-            },
-            {
-                title: 'ชื่อร้านค้า',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-            },
-            {
-                title: 'จำนวนสินค้า',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
+                dataIndex: 'createdate',
+                key: 'createdate',
             },
             {
                 title: 'ชื่อลูกค้าที่สั่งซื้อ',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
+                dataIndex: 'fullname',
+                key: 'fullname',
+            },
+            {
+                title: 'สถานะการจัดส่ง',
+                dataIndex: 'shippingstatusname',
+                key: 'shippingstatusname',
+            },
+            {
+                title: 'ที่อยู่',
+                dataIndex: 'address',
+                key: 'address',
+            },
+            {
+                title: 'อำเภอ',
+                dataIndex: 'disstrict',
+                key: 'disstrict',
+            },
+            {
+                title: 'จังหวัด',
+                dataIndex: 'province',
+                key: 'province',
             },
             {
                 title: 'รายละเอียด',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-            },
-            {
-                title: 'สถานะการส่งสินค้า',
                 // dataIndex: 'dateend',
                 // key: 'dateend',
                 render: (text, record, index) =>
                     <span>
-                        <Button type='link' onClick={this.showModal}>View detail</Button>
+                        <Button type='link' onClick={this.showModal}>ดู</Button>
                     </span>
             }
         ]
@@ -142,6 +153,7 @@ export default class List extends Component {
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SHIPPING" bordered={false}>
                 <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
+                        dataSource={this.state.shippings}
                         columns={columns}
                     />
                 </Card>

@@ -15,8 +15,8 @@ class DefaultFooter extends Component {
 
     return (
       <React.Fragment>
-        <span>PREORDER &copy; 2019 ISAAC TECHNOLOGY.</span>
-        <span className="ml-auto">Powered by ISAAC INTERN</span>
+        <span>ADMIN &copy; 2019 ISAAC TECHNOLOGY.</span>
+        <span className="ml-auto">BY PROGRAMMER</span>
       </React.Fragment>
     );
   }
