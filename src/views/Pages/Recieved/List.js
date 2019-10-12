@@ -7,7 +7,7 @@ export default class List extends Component {
         recieves : []
     }
     UNSAFE_componentWillMount () {
-
+        this.getRecieve();
     }
     getRecieve = async () => {
         const get = await shippingRecieve();
@@ -21,7 +21,7 @@ export default class List extends Component {
                 <Row>
                     <Col>
                     <Shippingfrom 
-                    data={this.state.recieves}
+                    data={this.state.recieves.length > 0 && this.state.recieves}
                     />
                     </Col>
                 </Row>

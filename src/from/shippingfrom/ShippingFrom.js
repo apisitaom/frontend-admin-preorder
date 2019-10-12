@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Table, Button, Modal } from 'antd'
 export default class RecieveFrom extends Component {
     render() {
-        console.log('SHIPPING => ',this.props);
+        console.log('SHIPPING => ',this.props.data);
         const columns = [
             {
                 title: '#',
@@ -69,6 +69,8 @@ export default class RecieveFrom extends Component {
                 <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
                         columns={columns}
+                        dataSource={this.props.data}
+                        rowKey={(row, index)=> index}
                     />
                 </Card>
             </div>
