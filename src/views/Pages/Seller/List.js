@@ -15,7 +15,7 @@ export class List extends Component {
         active: false,
         updateSeller: []
     }
-    componentWillMount () {
+    UNSAFE_componentWillMount () {
         this.getSeller();
     }
     getSeller = async () => {
