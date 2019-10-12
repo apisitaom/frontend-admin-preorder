@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Divider } from 'antd'
-import pic from '../assets/img/no-image-icon.png'
+import { imgurl } from '../services/config/APIurl' 
 export default class Seller extends Component {
     render() {
         return (
@@ -8,7 +8,7 @@ export default class Seller extends Component {
                 <Row gutter={48}>
                     <Col span={8}>
                         <Row type="flex" style={{ justifyContent: 'center', borderStyle: 'groove' }}>
-                            <img src={'http://192.168.0.161:4000/images/'+this.props.seller.photo} style={{ width: '70%' }} alt='seller-profile'/>
+                            <img src={`${imgurl}`+this.props.seller.photo} style={{ width: '70%' }} alt='seller-profile'/>
                         </Row>
                     </Col>
                     <Col span={16}>

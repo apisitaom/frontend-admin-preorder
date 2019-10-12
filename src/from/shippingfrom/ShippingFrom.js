@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Card, Table, Button, Modal } from 'antd'
 export default class RecieveFrom extends Component {
     render() {
-        console.log('SHIPPING => ',this.props.data);
         const columns = [
             {
                 title: '#',

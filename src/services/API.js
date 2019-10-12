@@ -19,15 +19,15 @@ export const shippigGet = async (data, token = "") => {
     return res;
 };
 //------------------ PAYMENT -------------------//
-export const paymentGet = async (data, token = "") => {
+export const paymentPaid = async (data, token = "") => {
     const res = await Fetch("GET", token, `/payment/all`, data);
     return res;
 };
 export const paymentCheck = async (data, token = "") => {
-    const res = await Fetch("GET", token, `/admin/check`, data);
+    const res = await Fetch("GET", token, `/payment/admin/check`, data);
     return res;
 };
-export const paymentPay = async (data, token = "") => {
+export const paymentRole = async (data, token = "") => {
     const res = await Fetch("POST", token, `/payment/pay`, data);
     return res;
 };
