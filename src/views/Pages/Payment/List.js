@@ -30,7 +30,7 @@ export default class List extends Component {
                 <Row >   
                     <Col span={24}>
                         <PaymentFrom 
-                        
+                        data={this.state.payments.length > 0 && this.state.payments}
                         />
                     </Col>
                     <Col span={24}>
