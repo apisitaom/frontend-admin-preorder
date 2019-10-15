@@ -41,11 +41,6 @@ export default class PaymentFrom extends Component {
                 key: 'createdate',
             },
             {
-                title: 'ชื่อร้านค้า',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-            },
-            {
                 title: 'ชื่อลูกค้าที่สั่งซื้อ',
                 dataIndex: 'fullname',
                 key: 'fullname',
