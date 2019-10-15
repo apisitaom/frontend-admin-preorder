@@ -7,7 +7,7 @@ export default class PaidFrom extends Component {
     clearSearchData = () => {
         this.setState({
             customername: '',
-            status: '0'
+            status: '0',
         })
     }
     showModal = () => {
@@ -31,16 +31,11 @@ export default class PaidFrom extends Component {
             },
             {
                 title: 'วันที่จ่ายสินค้า',
-                // dataIndex: 'proname',
-                // key: 'proname',
+                dataIndex: 'createdate',
+                key: 'createdate',
             },
             {
                 title: 'ชื่อร้านค้า',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-            },
-            {
-                title: 'จำนวนสินค้าที่สั่ง',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
             },
@@ -50,12 +45,12 @@ export default class PaidFrom extends Component {
                 // key: 'datestart',
             },
             {
-                title: 'รายละเอียด',
+                title: 'สถานะการจ่าย',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
             },
             {
-                title: 'สถานะการจ่ายตังค์',
+                title: 'รายละเอียด',
                 // dataIndex: 'dateend',
                 // key: 'dateend',
                 render: (text, record, index) =>
@@ -75,7 +70,6 @@ export default class PaidFrom extends Component {
                 >
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="PAID" bordered={false}>
-                <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
                         columns={columns}
                     />

@@ -22,6 +22,7 @@ export default class PaymentFrom extends Component {
         this.setState({visible: false})
     }
     render() {
+        console.log(this.props.data);
         const columns = [
             {
                 title: '#',
@@ -36,8 +37,8 @@ export default class PaymentFrom extends Component {
             },
             {
                 title: 'วันที่จ่ายสินค้า',
-                // dataIndex: 'proname',
-                // key: 'proname',
+                dataIndex: 'createdate',
+                key: 'createdate',
             },
             {
                 title: 'ชื่อร้านค้า',
@@ -45,22 +46,17 @@ export default class PaymentFrom extends Component {
                 // key: 'datestart',
             },
             {
-                title: 'จำนวนสินค้าที่สั่ง',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
+                title: 'ชื่อลูกค้าที่สั่งซื้อ',
+                dataIndex: 'fullname',
+                key: 'fullname',
             },
             {
-                title: 'ชื่อลูกค้าที่สั่งซื้อ',
+                title: 'สถานะการจ่าย',
                 // dataIndex: 'datestart',
                 // key: 'datestart',
             },
             {
                 title: 'รายละเอียด',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
-            },
-            {
-                title: 'สถานะการจ่ายตังค์',
                 // dataIndex: 'dateend',
                 // key: 'dateend',
                 render: (text, record, index) =>
@@ -80,9 +76,10 @@ export default class PaymentFrom extends Component {
                 >
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="PAYMENT" bordered={false}>
-                <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
-                        columns={columns}
+                    dataSource={this.props.data}
+                    columns={columns}
+                    rowKey={(row, index)=> index}
                     />
                 </Card>
             </div>

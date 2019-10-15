@@ -131,7 +131,6 @@ export class List extends Component {
                     style={{ left: 70 }}
                 >  
                     <Seller seller={this.state.seller}></Seller>
-                    {/* {this.state.product ? <Product product={this.state.product} options={this.state.options} /> : ''} */}
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SEARCH" bordered={false}>
                     <Row gutter={24} style={{ marginBottom: '1%' }}>
@@ -185,6 +184,7 @@ export class List extends Component {
                     <Table
                         dataSource = {this.state.sellers}
                         columns={columns}
+                        rowKey={(row, index)=> index}  
                     />
                 </Card>
             </div>
