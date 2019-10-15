@@ -27,20 +27,20 @@ export default class List extends Component {
         })
     }
     showModalPayment = async (index) => {
-        console.log("VIEW PAYMENT", index);
         this.setState({
             payment: this.state.payments[index],
             visible: true
         })
-
     }
     showModalPaid = async (index) => {
-        console.log("VIEW PAYMENT/PAID", index);
         this.setState({
             payment: this.state.paids[index],
             visible: true
         })
-
+    }
+    onUpdatetatusPayment = async data => {
+        await paymentRole(data);
+        await window.location.reload();
     }
     render() {
         return (
@@ -51,6 +51,7 @@ export default class List extends Component {
                         data={this.state.payments.length > 0 && this.state.payments}
                         showModal={this.showModalPayment}
                         payment={this.state.payment}
+                        changeStatus={this.onUpdatetatusPayment}
                         />
                     </Col>
                     <Col span={12}>

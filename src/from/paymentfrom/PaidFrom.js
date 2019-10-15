@@ -13,7 +13,6 @@ export default class PaidFrom extends Component {
         this.setState({visible: true})
     }
     render() {
-        console.log('PaidFrom', this.props);
         const columns = [
             {
                 title: '#',

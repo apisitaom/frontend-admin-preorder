@@ -13,8 +13,19 @@ export default class PaymentFrom extends Component {
         this.props.showModal(index);
         this.setState({visible: true})
     }
+    changeStatusPayment = async (index, e) => {
+        const data = {
+            payid: index.payid
+        }
+        Modal.confirm({
+            title: 'update status payment',
+            onOk: () => this.onUpdateStatus(data)
+        })
+    }
+    onUpdateStatus = async data => {
+        await this.props.changeStatus(data);
+    }
     render() {
-        console.log(this.props);
         const columns = [
             {
                 title: '#',
@@ -49,12 +60,10 @@ export default class PaymentFrom extends Component {
               { 
                   return (
                     <Select
-                    // value={String(record.active)}
-                    // onChange={(e) => this.changeStatus(record, e)}
+                    onChange={(e) => this.changeStatusPayment(record, e)}
                     value="สถานะ"
                     >   
                         <Option key={"true"}>จ่ายเเล้ว</Option>
-                        <Option key={"false"}>ยังไม่จ่าย</Option>
                     </Select>
                 )}          
             },

@@ -5,7 +5,6 @@ import { shippigGet } from '../../../services/API'
 export default class List extends Component {
     state = {
         shippings: [],
-
     }
     UNSAFE_componentWillMount () {
         this.getShipping();
