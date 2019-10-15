@@ -1,14 +1,8 @@
 import React, { Component } from 'react'
 import { Card, Table, Button, Modal } from 'antd'
 export default class PaidFrom extends Component {
-    handleSelect = value => {
-        this.setState({ status: value })
-    }
-    clearSearchData = () => {
-        this.setState({
-            customername: '',
-            status: '0',
-        })
+    state={
+        visible: false
     }
     showModal = () => {
         this.setState({visible: true})
@@ -57,10 +51,10 @@ export default class PaidFrom extends Component {
         return (
             <div>
                 <Modal
-                    // visible={this.state.visible}
-                    // onCancel={this.onCancel}
-                    // footer={null}
-                    // width='60%'
+                    visible={this.state.visible}
+                    onCancel={this.onCancel}
+                    footer={null}
+                    width='70%'
                     // style={{ left: 70 }}
                 >
                 </Modal>

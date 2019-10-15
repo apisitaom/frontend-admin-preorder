@@ -2,19 +2,8 @@ import React, { Component } from 'react'
 import { Card, Table, Button, Modal, Select } from 'antd'
 const { Option } = Select
 export default class PaymentFrom extends Component {
-    state = {
-        payments: [],
-        customername: '',
-        status: '0',
-    }
-    handleSelect = value => {
-        this.setState({ status: value })
-    }
-    clearSearchData = () => {
-        this.setState({
-            customername: '',
-            status: '0'
-        })
+    state={
+        visible: false
     }
     showModal = () => {
         this.setState({visible: true})
@@ -68,8 +57,6 @@ export default class PaymentFrom extends Component {
             },
             {
                 title: 'รายละเอียด',
-                // dataIndex: 'dateend',
-                // key: 'dateend',
                 render: (text, record, index) =>
                     <span>
                         <Button type='link' onClick={this.showModal}>ดู</Button>
@@ -82,8 +69,8 @@ export default class PaymentFrom extends Component {
                     visible={this.state.visible}
                     onCancel={this.onCancel}
                     footer={null}
-                    width='60%'
-                    style={{ left: 70 }}
+                    width='70%'
+                    // style={{ left: 70 }}
                 >
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="PAYMENT" bordered={false}>
