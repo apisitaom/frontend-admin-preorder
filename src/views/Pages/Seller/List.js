@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Card, Table, Button, Input,Form , Row, Col, DatePicker, Select, Modal} from 'antd' 
+import { Card, Table, Button,Form, Select, Modal} from 'antd' 
 import Seller from '../../../modalComponents/Seller'
 import { 
     sellersGet,
     sellerRole
  } from "../../../services/API";
-const { Option } = Select
+ import Selectfrom from '../../../from/nav/SelectFrom'
+ const { Option } = Select
 export class List extends Component {
     state = {
         sellers: [],
@@ -132,53 +133,10 @@ export class List extends Component {
                 >  
                     <Seller seller={this.state.seller}></Seller>
                 </Modal>
-                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SEARCH" bordered={false}>
-                    <Row gutter={24} style={{ marginBottom: '1%' }}>
-                        <Col span={12}>
-                            <Input 
-                            placeholder='ชื่อร้านค้า'
-                            value={this.state.shopname} 
-                            onChange={(e)=>this.setState({shopname: e.target.value})}
-                            />
-                        </Col>
-                        <Col span={12}>
-                            <Input 
-                            placeholder='Email' 
-                            value={this.state.email}
-                            onChange={(e)=>this.setState({email: e.target.value})}
-                            />
-                        </Col>
-                    </Row>
-                    <Row gutter={24} style={{ marginBottom: '1%' }}>
-                        <Col span={12}>
-                            <DatePicker 
-                            placeholder='Select registerd date' 
-                            style={{ width: '100%' }} 
-                            onChange={this.dateOnChange}
-                            />
-                        </Col>
-                        <Col span={12}>
-                            <Select 
-                            style={{ width: '100%' }}
-                            onChange={this.selectOnChange}
-                            value={this.state.status}
-                            >
-                                <Option value='non'>Select active status</Option>
-                                <Option value='yes'>Active</Option>
-                                <Option value='no'>Inactive</Option>
-                            </Select>
-                        </Col>
-                    </Row>
-                    <Row gutter={16}>
-                        <Col span={18} />
-                        <Col span={3}>
-                            <Button type="danger" style={{ width: '100%' }} onClick={this.clearSearchData}>ล้างข้อมูล</Button>
-                        </Col>
-                        <Col span={3}>
-                            <Button type="primary" style={{ width: '100%' }}>ค้นหา</Button>
-                        </Col>
-                    </Row>
-                </Card>
+
+                <Selectfrom 
+                />
+
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SELLERS" bordered={false}>
                 <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
