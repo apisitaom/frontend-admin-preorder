@@ -4,7 +4,7 @@ import Shippingfrom from '../../../from/shippingfrom/ShippingFrom'
 import { shippingRecieve } from '../../../services/API'
 export default class List extends Component {
     state = {
-        recieves : []
+        shippings : []
     }
     UNSAFE_componentWillMount () {
         this.getRecieve();
@@ -12,7 +12,13 @@ export default class List extends Component {
     getRecieve = async () => {
         const get = await shippingRecieve();
         this.setState({
-            recieves: get.data
+            shippings: get.data
+        })
+    }
+    showModal = async (index) => {
+        this.setState({
+            shipping: this.state.shippings[index],
+            visible: true
         })
     }
     render() {
@@ -21,7 +27,10 @@ export default class List extends Component {
                 <Row>
                     <Col>
                     <Shippingfrom 
-                    data={this.state.recieves.length > 0 && this.state.recieves}
+                    status={this.setState.status = "recieve"}
+                    data={this.state.shippings.length > 0 && this.state.shippings}
+                    showModal={this.showModal}
+                    shipping={this.state.shipping}
                     />
                     </Col>
                 </Row>

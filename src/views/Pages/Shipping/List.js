@@ -17,7 +17,6 @@ export default class List extends Component {
         })
     }
     showModal = async (index) => {
-        // console.log('STATE +++ ', index);
         this.setState({
             shipping: this.state.shippings[index],
             visible: true
@@ -29,6 +28,7 @@ export default class List extends Component {
                 <Row>
                     <Col>
                     <ShippingFrom 
+                    status={this.setState.status = "shipping"}
                     data={this.state.shippings.length > 0 && this.state.shippings}
                     showModal={this.showModal}
                     shipping={this.state.shipping}

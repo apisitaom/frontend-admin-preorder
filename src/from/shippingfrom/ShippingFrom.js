@@ -8,15 +8,20 @@ export default class RecieveFrom extends Component {
     onCancel = () => {
         this.setState({visible: false})
     }
-    showModal = async (index) => {
-        // console.log('SHIPPING INDEX : ', index);
+    showModalShipping = async (index) => {
         this.props.showModal(index);
         this.setState({
             visible: true
         })
-        // console.log('ShippingFrom' ,this.props.shipping);
+    }
+    showModalRecieve = async (index) => {
+        this.props.showModal(index);
+        this.setState({
+            visible: true
+        })
     }
     render() {
+        console.log(this.props);
         const columns = [
             {
                 title: '#',
@@ -63,7 +68,7 @@ export default class RecieveFrom extends Component {
                 title: 'รายละเอียด',
                 render: (text, record, index) =>
                     <span>
-                        <Button type='link' onClick={ () => this.showModal(index)}>ดู</Button>
+                        <Button type='link' onClick={ () => this.props.status === "shipping" ? this.showModalShipping(index): this.showModalRecieve(index)}>ดู</Button>
                     </span>
             }
         ]
