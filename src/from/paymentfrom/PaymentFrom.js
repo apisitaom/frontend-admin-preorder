@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Card, Table, Button, Modal } from 'antd'
+import { Card, Table, Button, Modal, Select } from 'antd'
+const { Option } = Select
 export default class PaymentFrom extends Component {
     state = {
         payments: [],
@@ -48,6 +49,21 @@ export default class PaymentFrom extends Component {
                 title: 'สถานะการจ่าย',
                 dataIndex: 'statusname',
                 key: 'statusname',
+            },
+            {
+                title: 'สถานะ',
+                key: 'active',
+                render: (text, record, index) => 
+              { 
+                  return (
+                    <Select
+                    value={String(record.active)}
+                    onChange={(e) => this.changeStatus(record, e)}
+                    >   
+                        <Option key={"true"}>active</Option>
+                        <Option key={"false"}>inactive</Option>
+                    </Select>
+                )}          
             },
             {
                 title: 'รายละเอียด',

@@ -13,7 +13,7 @@ export default class List extends Component {
         const get = await shippigGet();
         this.setState({
             shippings: get.data
-        }, () => console.log('SHIPPING COMPO',this.state.shippings))
+        })
     }
     render() {
         return (
