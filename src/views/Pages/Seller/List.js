@@ -131,7 +131,8 @@ export class List extends Component {
                     width='55%'
                     style={{ left: 70 }}
                 >  
-                    <Seller seller={this.state.seller}></Seller>
+                    <Seller seller={this.state.seller} 
+                    />
                 </Modal>
 
                 <Selectfrom 

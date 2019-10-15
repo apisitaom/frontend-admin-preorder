@@ -6,7 +6,8 @@ import { paymentPaid, paymentCheck, paymentRole } from '../../../services/API'
 export default class List extends Component {
     state = {
         paids: [],
-        payments: []
+        payments: [],
+        results: []
     }
     UNSAFE_componentWillMount () {
         this.getPaid();
@@ -21,10 +22,12 @@ export default class List extends Component {
     getPayment = async () => {
         const get = await paymentCheck();
         this.setState({
-            payments: get.data
+            payments: get.data,
+            results: get.data.result
         })
     }
     render() {
+        console.log('RESULT :',this.state.results)
         return (
             <div>
                 <Row gutter={4}>   

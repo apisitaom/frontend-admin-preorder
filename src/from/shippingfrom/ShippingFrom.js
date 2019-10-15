@@ -1,6 +1,21 @@
 import React, { Component } from 'react'
 import { Card, Table, Button, Modal } from 'antd'
+import ShippingModal from '../../modalComponents/Shipping'
 export default class RecieveFrom extends Component {
+    state={
+        visible: false
+    }
+    onCancel = () => {
+        this.setState({visible: false})
+    }
+    showModal = async (index) => {
+        // console.log('SHIPPING INDEX : ', index);
+        this.props.showModal(index);
+        this.setState({
+            visible: true
+        })
+        // console.log('ShippingFrom' ,this.props.shipping);
+    }
     render() {
         const columns = [
             {
@@ -46,26 +61,26 @@ export default class RecieveFrom extends Component {
             },
             {
                 title: 'รายละเอียด',
-                // dataIndex: 'dateend',
-                // key: 'dateend',
                 render: (text, record, index) =>
                     <span>
-                        <Button type='link' onClick={this.showModal}>ดู</Button>
+                        <Button type='link' onClick={ () => this.showModal(index)}>ดู</Button>
                     </span>
             }
         ]
         return (
             <div>
                 <Modal
-                    // visible={this.state.visible}
-                    // onCancel={this.onCancel}
-                    // footer={null}
-                    // width='55%'
-                    // style={{ left: 70 }}
+                    visible={this.state.visible}
+                    onCancel={this.onCancel}
+                    footer={null}
+                    width='75%'
+                    style={{ left: 70 }}
                 >
+                    <ShippingModal 
+                    shipping={this.props.shipping}
+                    />
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="RECIEVED" bordered={false}>
-                <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
                         columns={columns}
                         dataSource={this.props.data}

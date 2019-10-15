@@ -4,7 +4,7 @@ import pic from '../assets/img/no-image-icon.png'
 export default class Payment extends Component {
     render() {
         return (
-<div>
+            <div>
                 {/* <Row gutter={48}>
                     <Col span={8}>
                         <Row type="flex" style={{ justifyContent: 'center', borderStyle: 'groove' }}>

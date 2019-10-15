@@ -66,9 +66,9 @@ export default class PaidFrom extends Component {
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="PAID" bordered={false}>
                     <Table
-                        columns={columns}
-                        dataSource={this.props.data}
-                        rowKey={(row, index)=> index}
+                    dataSource={this.props.data}
+                    columns={columns}
+                    rowKey={(row, index)=> index}
                     />
                 </Card>
             </div>
