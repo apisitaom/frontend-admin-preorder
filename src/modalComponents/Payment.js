@@ -1,75 +1,70 @@
 import React, { Component } from 'react'
-import { Row, Col, Divider } from 'antd'
-import pic from '../assets/img/no-image-icon.png'
+import { Row, Col, Divider, Table } from 'antd'
 export default class Payment extends Component {
     render() {
+        console.log('PAYMENT MODAL ====> ', this.props.payment );
+        const columns = [
+            {
+                title: '#',
+                dataIndex: 'key',
+                key: 'key',
+                width: '5%',
+                render: (text, record, index) => (
+                    <span key={index}>
+                        {index + 1}
+                    </span>
+                )
+            },
+            {
+                title: 'ชื่อสินค้า',
+                dataIndex: 'proname',
+                key: 'proname',
+            },
+            {
+                title: 'รายละเอียดสินค้า',
+                dataIndex: 'prodetail',
+                key: 'prodetail',
+            },
+            {
+                title: 'ราคา',
+                dataIndex: 'price',
+                key: 'price',
+            },
+            {
+                title: 'จำนวน',
+                dataIndex: 'amounts',
+                key: 'amounts',
+            },
+            {
+                title: 'ผู้ขาย',
+                dataIndex: 'sellername',
+                key: 'sellername',
+            }
+        ]
         return (
             <div>
-                {/* <Row gutter={48}>
-                    <Col span={8}>
-                        <Row type="flex" style={{ justifyContent: 'center', borderStyle: 'groove' }}>
-                            <img src={'http://192.168.0.161:4000/images/'+this.props.seller.photo} style={{ width: '70%' }} alt='seller-profile'/>
-                        </Row>
-                    </Col>
-                    <Col span={16}>
-                        <Row type="flex" style={{ justifyContent: 'center',marginBottom:'1%' }}>
-                            <h2>{this.props.seller.sellername}</h2>
-                        </Row>
-                    <Row gutter={48}>
-                        <Col span={6}><b>ที่อยู่ :</b></Col>
-                        <Col span={18}>{this.props.seller.address}</Col>
-                    </Row>
-                    <Row gutter={48}>
-                        <Col span={6}><b>ตำบล/แขวง :</b></Col>
-                        <Col span={18}>{this.props.seller.subdistrict}</Col>
-                    </Row>
-                    <Row gutter={48}>
-                        <Col span={6}><b>อำเภอ/เขต :</b></Col>
-                        <Col span={18}>{this.props.seller.district}</Col>
-                    </Row>
-                    <Row gutter={48}>
-                        <Col span={6}><b>จังหวัด :</b></Col>
-                        <Col span={18}>{this.props.seller.province}</Col>
-                    </Row>
-                    <Row gutter={48}>
-                        <Col span={6}><b>รหัสไปรษณีย์ :</b></Col>
-                        <Col span={18}>{this.props.seller.zipcode}</Col>
-                    </Row>
-                    <Row gutter={48}>
-                        <Col span={6}><b>Email :</b></Col>
-                        <Col span={18}>{this.props.seller.email}</Col>
-                    </Row>
-                    <Row gutter={48}>
-                        <Col span={6}><b>เบอร์โทรศัพท์ :</b></Col>
-                        <Col span={18}>{this.props.seller.phonenumber}</Col>
-                    </Row>
-                    <Row gutter={48}>
-                        <Col span={10}><b>หมายเลขประจำตัวผู้เสียภาษี :</b></Col>
-                        <Col span={14}>{this.props.seller.taxid}</Col>
-                    </Row>
-                    </Col>
-                        </Row>
-                        <Divider orientation="left">ข้อมูลบัญชีธนาคาร</Divider>
-                            <Row span={24} style={{marginBottom:'1%'}}>
-                                <Col span={6}><b>ชื่อธนาคาร :</b></Col>
-                                <Col span={18}>{this.props.seller.bankname}</Col>
-                            </Row>
-                            <Row span={24} style={{marginBottom:'1%'}}>
-                                <Col span={6}><b>หมายเลขบัญชี :</b></Col>
-                                <Col span={18}>{this.props.seller.banknumber}</Col>
-                            </Row><Row span={24} style={{marginBottom:'1%'}}>
-                                <Col span={6}><b>ชื่อบัญชี :</b></Col>
-                                <Col span={18}>{this.props.seller.bankaccountname}</Col>
-                            </Row>
-                        <Divider orientation="left">ข้อมูลบัญชีพร้อมเพย์</Divider>
-                            <Row span={24} style={{marginBottom:'1%'}}>
-                                <Col span={6}><b>ชื่อบัญชี :</b></Col>
-                                <Col span={18}>{this.props.seller.promptpayname}</Col>
-                            </Row>
-                            <Row span={24}>
-                                <Col span={6}><b>หมายเลขโทรศัพท์/เลขประตัวประชาชน :</b></Col>
-                                <Col span={18}>{this.props.seller.promptpaynumber}</Col>
-                            </Row> */}
+            <Divider orientation="left">วันที่ส่ง</Divider>
+                <Row span={24} style={{marginBottom:'1%'}}>
+                    <Col span={6}><b>วันที่สั่ง :</b></Col>
+                    <Col span={18}>{this.props.payment.createdate}</Col>
+                </Row>
+            <Divider orientation="left">ผู้สั่ง</Divider>
+                <Row span={24} style={{marginBottom:'1%'}}>
+                    <Col span={6}><b>ชื่อ :</b></Col>
+                    <Col span={18}>{this.props.payment.fullname}</Col>
+                </Row>
+            <Divider orientation="left">การรายที่สั่ง</Divider>
+                <Col span={6}><b>ราคารวม :</b></Col>
+                <Col span={18}>{this.props.payment.result[0].totalprice}</Col>
+                <Col span={6}><b>เหลือ :</b></Col>
+                <Col span={18}>{this.props.payment.result[0].totalproduct} ชิ้น</Col> 
+                <Row span={24} style={{marginBottom:'1%'}}>
+                    <Table
+                    columns={columns} 
+                    dataSource={this.props.payment.result}
+                    rowKey={(row, index)=> index}
+                    />
+                </Row>
             </div>
         )
     }

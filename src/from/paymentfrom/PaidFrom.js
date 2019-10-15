@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { Card, Table, Button, Modal } from 'antd'
+import PaymentModal from '../../modalComponents/Payment'
 export default class PaidFrom extends Component {
     state={
         visible: false
     }
-    showModal = () => {
-        this.setState({visible: true})
-    }
     onCancel = () => {
         this.setState({visible: false})
     }
+    showModal = async (index) => {
+        this.props.showModal(index);
+        this.setState({visible: true})
+    }
     render() {
+        console.log('PaidFrom', this.props);
         const columns = [
             {
                 title: '#',
@@ -40,11 +43,9 @@ export default class PaidFrom extends Component {
             },
             {
                 title: 'รายละเอียด',
-                // dataIndex: 'dateend',
-                // key: 'dateend',
                 render: (text, record, index) =>
                     <span>
-                        <Button type='link' onClick={this.showModal}>ดู</Button>
+                        <Button type='link' onClick={ () => this.showModal(index)}>ดู</Button>
                     </span>
             }
         ]
@@ -55,8 +56,10 @@ export default class PaidFrom extends Component {
                     onCancel={this.onCancel}
                     footer={null}
                     width='70%'
-                    // style={{ left: 70 }}
                 >
+                    <PaymentModal 
+                    payment={this.props.payment}
+                    />
                 </Modal>
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="PAID" bordered={false}>
                     <Table
