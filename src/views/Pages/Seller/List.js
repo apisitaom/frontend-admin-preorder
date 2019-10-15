@@ -165,7 +165,7 @@ export class List extends Component {
                             value={this.state.status}
                             >
                                 <Option value='non'>Select active status</Option>
-                         8       <Option value='yes'>Active</Option>
+                                <Option value='yes'>Active</Option>
                                 <Option value='no'>Inactive</Option>
                             </Select>
                         </Col>

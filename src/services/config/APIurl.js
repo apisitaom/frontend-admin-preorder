@@ -1,2 +1,3 @@
-export const apiurl = "http://192.168.1.23:4000"
-// export const apiurl = "http://localhost:4000"
+const url = `http://localhost:4000`
+export const apiurl = url
+export const imagurl = `${url}/images/` 
