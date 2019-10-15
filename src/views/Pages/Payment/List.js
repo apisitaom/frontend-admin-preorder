@@ -27,13 +27,13 @@ export default class List extends Component {
     render() {
         return (
             <div>
-                <Row >   
-                    <Col span={24}>
+                <Row gutter={4}>   
+                    <Col span={12}>
                         <PaymentFrom 
                         data={this.state.payments.length > 0 && this.state.payments}
                         />
                     </Col>
-                    <Col span={24}>
+                    <Col span={12}>
                         <PaidFrom 
                         data={this.state.paids.length > 0 && this.state.paids}
                         />

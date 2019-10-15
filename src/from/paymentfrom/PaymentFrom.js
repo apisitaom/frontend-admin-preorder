@@ -59,7 +59,7 @@ export default class PaymentFrom extends Component {
                     <Select
                     // value={String(record.active)}
                     // onChange={(e) => this.changeStatus(record, e)}
-                    value="สถานะการจ่ายตังค์"
+                    value="สถานะ"
                     >   
                         <Option key={"true"}>จ่ายเเล้ว</Option>
                         <Option key={"false"}>ยังไม่จ่าย</Option>
