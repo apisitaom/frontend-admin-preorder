@@ -36,13 +36,13 @@ export default class PaidFrom extends Component {
             },
             {
                 title: 'ชื่อลูกค้าที่สั่งซื้อ',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
+                dataIndex: 'fullname',
+                key: 'fullname',
             },
             {
                 title: 'สถานะการจ่าย',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
+                dataIndex: 'statusname',
+                key: 'statusname',
             },
             {
                 title: 'รายละเอียด',
@@ -50,7 +50,7 @@ export default class PaidFrom extends Component {
                 // key: 'dateend',
                 render: (text, record, index) =>
                     <span>
-                        <Button type='link' onClick={this.showModal}>View detail</Button>
+                        <Button type='link' onClick={this.showModal}>ดู</Button>
                     </span>
             }
         ]
@@ -67,6 +67,8 @@ export default class PaidFrom extends Component {
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="PAID" bordered={false}>
                     <Table
                         columns={columns}
+                        dataSource={this.props.data}
+                        rowKey={(row, index)=> index}
                     />
                 </Card>
             </div>

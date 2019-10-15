@@ -22,7 +22,6 @@ export default class PaymentFrom extends Component {
         this.setState({visible: false})
     }
     render() {
-        console.log(this.props.data);
         const columns = [
             {
                 title: '#',
@@ -47,8 +46,8 @@ export default class PaymentFrom extends Component {
             },
             {
                 title: 'สถานะการจ่าย',
-                // dataIndex: 'datestart',
-                // key: 'datestart',
+                dataIndex: 'statusname',
+                key: 'statusname',
             },
             {
                 title: 'รายละเอียด',
@@ -56,7 +55,7 @@ export default class PaymentFrom extends Component {
                 // key: 'dateend',
                 render: (text, record, index) =>
                     <span>
-                        <Button type='link' onClick={this.showModal}>View detail</Button>
+                        <Button type='link' onClick={this.showModal}>ดู</Button>
                     </span>
             }
         ]
