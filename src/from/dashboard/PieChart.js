@@ -4,25 +4,29 @@ import { CardHeader } from 'reactstrap'
 import { Card, Row, Col, Button } from 'antd'
 const ButtonGroup = Button.Group;
 export default class PieChart extends Component {
+  state = {
+    age: []
+  }
+  onClickSelect = async (e) => {
+    this.props.getPieChart(e.target.value);
+  }
     render() {
+      console.log('Pie Chart :', [`${this.props.ages}`]);
         const pie1 = {
             labels: [
               'หญิง',
               'ชาย',
-              'อื่นๆ',
             ],
             datasets: [
               {
-                data: [300, 50, 100],
+                data: this.props.ages,
                 backgroundColor: [
                   '#FF6384',
                   '#36A2EB',
-                  '#FFCE56',
                 ],
                 hoverBackgroundColor: [
                   '#FF6384',
                   '#36A2EB',
-                  '#FFCE56',
                 ],
               }],
           };
@@ -35,7 +39,7 @@ export default class PieChart extends Component {
             ],
             datasets: [
               {
-                data: [300, 50, 100, 45],
+                data: this.props.genders,
                 backgroundColor: [
                   '#FF6384',
                   '#36A2EB',
@@ -54,11 +58,10 @@ export default class PieChart extends Component {
             <div>
                 <Card>
                     <CardHeader><h5>กลุ่มผู้ใช้</h5></CardHeader>
-                    <ButtonGroup >
-                      <Button>วัน</Button>
-                      <Button>สัปดาห์</Button>
-                      <Button>เดือน</Button>
-                      <Button>ปี</Button>
+                    <ButtonGroup onClick={(e) => this.onClickSelect(e)}>
+                    <Button value={'day'} >วัน</Button>
+                      <Button value={'munth'}>เดือน</Button>
+                      <Button value={'year'}>ปี</Button>
                     </ButtonGroup>
                     <Row>
                         <Col span={24}>

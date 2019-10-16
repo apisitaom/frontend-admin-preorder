@@ -7,7 +7,7 @@ const ButtonGroup = Button.Group;
 export default class LineChart extends Component {
     render() {
         const line = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             datasets: [
               {
                 label: 'ยอดขาย',
@@ -28,7 +28,7 @@ export default class LineChart extends Component {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                data: [65, 59, 80, 81, 56, 55, 40],
+                data: [65, 59, 80, 81, 56, 55, 40, 60, 120, 209, 55, 150],
               },
             ],
           };
@@ -45,10 +45,9 @@ export default class LineChart extends Component {
                     <CardHeader><h5>ยอดขาย</h5></CardHeader>
                     <Row>
                     <ButtonGroup>
-                      <Button>วัน</Button>
-                      <Button>สัปดาห์</Button>
-                      <Button>เดือน</Button>
-                      <Button>ปี</Button>
+                    <Button value={'day'} >วัน</Button>
+                      <Button value={'munth'}>เดือน</Button>
+                      <Button value={'year'}>ปี</Button>
                     </ButtonGroup>
                         <Col style={{height:'520px'}}>
                             <Line 

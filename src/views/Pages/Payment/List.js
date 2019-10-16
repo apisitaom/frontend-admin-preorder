@@ -48,7 +48,7 @@ export default class List extends Component {
                 <Row gutter={4}>   
                     <Col span={12}>
                         <PaymentFrom 
-                        data={this.state.payments.length > 0 && this.state.payments}
+                        data={this.state.payments.length > 0 ? this.state.payments :[]}
                         showModal={this.showModalPayment}
                         payment={this.state.payment}
                         changeStatus={this.onUpdatetatusPayment}
@@ -56,7 +56,7 @@ export default class List extends Component {
                     </Col>
                     <Col span={12}>
                         <PaidFrom 
-                        data={this.state.paids.length > 0 && this.state.paids}
+                        data={this.state.paids.length > 0 ? this.state.paids :[]}
                         showModal={this.showModalPaid}
                         payment={this.state.payment}
                         />

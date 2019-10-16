@@ -4,8 +4,12 @@ import { CardHeader } from 'reactstrap'
 import { Card, Row, Col, Button } from 'antd'
 const ButtonGroup = Button.Group;
 export default class PieChart extends Component {
-    
+  onClickSelect = async (e) => {
+    console.log('PieChart');
+    // this.props.getPieChart(e.target.value);
+  }
     render() {
+      console.log(this.props);
         const pie1 = {
             labels: [
               'วัยรุ่น',
@@ -60,11 +64,10 @@ export default class PieChart extends Component {
                     <CardHeader>
                         <h2>กลุ่มลูกค้า</h2>
                     </CardHeader>
-                    <ButtonGroup >
-                      <Button>วัน</Button>
-                      <Button>สัปดาห์</Button>
-                      <Button>เดือน</Button>
-                      <Button>ปี</Button>
+                    <ButtonGroup onClick={(e) => this.onClickSelect(e)}> 
+                      <Button value={'day'} >วัน</Button>
+                      <Button value={'munth'}>เดือน</Button>
+                      <Button value={'year'}>ปี</Button>
                     </ButtonGroup>
                         <Row gutter={4}>
                             <Col span={12}>

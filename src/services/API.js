@@ -59,13 +59,13 @@ export const totalCustomer = async (data, token = "") => {
     return res;
 };
 //------------------ LineChart -------------------
-export const LineChart = async (data, token = "") => {
-    const res = await Fetch("GET", token, `/admin/graph`, data);
+export const LineCharts = async (data, token = "") => {
+    const res = await Fetch("POST", token, `/admin/graph`, data);
     return res;
 };
 //------------------ PieChart -------------------
-export const PieChart = async (data, token = "") => {
-    const res = await Fetch("GET", token, `/admin/user`, data);
+export const PieCharts = async (data, token = "") => {
+    const res = await Fetch("POST", token, `/admin/user`, data);
     return res;
 };
 //------------------ TopReionFrom -------------------
