@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { Line } from 'react-chartjs-2';
 import { CardHeader } from 'reactstrap';
-import { Card, Row, Col } from 'antd'
+import { Card, Row, Col, Button } from 'antd'
+const ButtonGroup = Button.Group;
 export default class LineChart extends Component {
     render() {
         const line = {
@@ -43,6 +44,12 @@ export default class LineChart extends Component {
                 <Card>
                     <CardHeader><h5>ยอดขาย</h5></CardHeader>
                     <Row>
+                    <ButtonGroup>
+                      <Button>วัน</Button>
+                      <Button>สัปดาห์</Button>
+                      <Button>เดือน</Button>
+                      <Button>ปี</Button>
+                    </ButtonGroup>
                         <Col style={{height:'520px'}}>
                             <Line 
                             data={line} 
