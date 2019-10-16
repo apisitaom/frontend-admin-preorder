@@ -8,18 +8,25 @@ import { Card, Col, Row } from 'antd'
 import {
   totalSale,
   totalSeller,
-  totalCustomer
+  totalCustomer,
+  topRegion,
+  topSeller
 } from '../../services/API'
 export default class Dashboard extends Component {
   state={
     totalsale: [],
     totalseller: [],
-    totalcustomer: []
+    totalcustomer: [],
+    topregions: [],
+    topsellers: []
   }
   UNSAFE_componentWillMount () {
     this.getTotalSale();
     this.getTotalSeller();
     this.getTotalCustomer();
+
+    this.getTopRegion();
+    this.getTopSeller();
   }
   getTotalSale = async () => {
     const get = await totalSale();
@@ -39,7 +46,19 @@ export default class Dashboard extends Component {
       totalcustomer: get.data.count
     })
   }
-  render() {    
+  getTopRegion = async () => {
+    const get = await topRegion();
+    this.setState({
+      topregions: get.data
+    })
+  }
+  getTopSeller = async () => {
+    const get = await topSeller();
+    this.setState({
+      topsellers: get.data
+    })
+  }
+  render() {
     return (
       <Card>
         <Row>
@@ -63,11 +82,13 @@ export default class Dashboard extends Component {
         </Row>
         <Row gutter={4} style={{ padding:'4px' }}>
           <Col span={12}>
-            <TopReionFrom 
+            <TopReionFrom
+            topregions={this.state.topregions.length > 0 && this.state.topregions}
             /> 
           </Col>
           <Col span={12}>
-            <TopSellerFrom 
+            <TopSellerFrom
+            topsellers={this.state.topsellers.length > 0 && this.state.topsellers}
             />
           </Col>
         </Row>

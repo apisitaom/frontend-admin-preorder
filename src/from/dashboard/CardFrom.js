@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Card, Row, Col } from 'antd'
 export default class CardFrom extends Component {
     render() {
-      console.log('CardFrom : ', this.props);
         const backgroundStype1 ={
             background: '#FF2442',
             textAlign: 'center',

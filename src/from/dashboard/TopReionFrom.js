@@ -5,19 +5,19 @@ export default class TopReionFrom extends Component {
     render() {
         const columns = [
             {
-                title: 'ชื่อร้านค้า',
-                dataIndex: '',
-                key: '',
-            },
-            {
-                title: 'ยอดขาย',
-                dataIndex: '',
-                key: '',
+                title: 'จังหวัด',
+                dataIndex: 'province',
+                key: 'province',
             },
             {
                 title: 'ยอดผู้ใช้',
-                dataIndex: '',
-                key: '',
+                dataIndex: 'total_user',
+                key: 'total_user',
+            },
+            {
+                title: 'ยอดขาย',
+                dataIndex: 'total_price',
+                key: 'total_price',
             },
         ]
         return (
@@ -27,7 +27,9 @@ export default class TopReionFrom extends Component {
                     <Row>
                         <Col>
                             <Table
+                            dataSource={this.props.topregions}
                             columns={columns}
+                            rowKey={(row, index)=> index}
                             />
                         </Col>
                     </Row>

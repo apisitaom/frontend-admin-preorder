@@ -56,6 +56,12 @@ export const totalCustomer = async (data, token = "") => {
 //------------------ PieChart -------------------
 
 //------------------ TopReionFrom -------------------
-
+export const topRegion = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/admin/provinces`, data);
+    return res;
+};
 //------------------ TopSellerFrom -------------------
-
+export const topSeller = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/admin/sellerstop/10`, data);
+    return res;
+};
