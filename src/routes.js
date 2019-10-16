@@ -3,9 +3,10 @@ import React from 'react';
 const OrderList = React.lazy(() => import('../src/views/Pages/Order/List'))
 const SellerList = React.lazy(() => import('../src/views/Pages/Seller/List'))
 const PaymentList = React.lazy(() => import('../src/views/Pages/Payment/List'))
-const PickupList = React.lazy(() => import('../src/views/Pages/Pickup/List'))
 const RecievedList = React.lazy(() => import('../src/views/Pages/Recieved/List'))
 const ShippingList = React.lazy(() => import('../src/views/Pages/Shipping/List'))
+const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
+const TopRegion = React.lazy(() => import('./views/Pages/Topregion/List'));
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -29,7 +30,6 @@ const ButtonDropdowns = React.lazy(() => import('./views/Buttons/ButtonDropdowns
 const ButtonGroups = React.lazy(() => import('./views/Buttons/ButtonGroups'));
 const Buttons = React.lazy(() => import('./views/Buttons/Buttons'));
 const Charts = React.lazy(() => import('./views/Charts'));
-const Dashboard = React.lazy(() => import('./views/Dashboard'));
 const CoreUIIcons = React.lazy(() => import('./views/Icons/CoreUIIcons'));
 const Flags = React.lazy(() => import('./views/Icons/Flags'));
 const FontAwesome = React.lazy(() => import('./views/Icons/FontAwesome'));
@@ -91,9 +91,9 @@ const routes = [
   { path: '/order/list', exact: true, name: 'Order List', component: OrderList },
   { path: '/seller/list', exact: true, name: 'Seller List', component: SellerList },
   { path: '/payment/list', exact: true, name: 'Payment List', component: PaymentList },
-  { path: '/pickup/list', exact: true, name: 'Pickup List', component: PickupList },
   { path: '/shipping/list', exact: true, name: 'Shipping List', component: ShippingList},
-  { path: '/recieved/list', exact: true, name: 'Recieved List', component: RecievedList}
+  { path: '/recieved/list', exact: true, name: 'Recieved List', component: RecievedList},
+  { path: '/topregion', exact: true, name: 'Top Region', component: TopRegion},
 
 ];
 

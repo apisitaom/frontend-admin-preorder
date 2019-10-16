@@ -3,7 +3,12 @@ export default {
     {
       name: 'Dashboard',
       url: '/dashboard',
-      icon: 'icon-speedometer',
+      icon: 'icon-speedometer'
+    },
+    {
+      name: 'Top Region',
+      url: '/topregion',
+      icon: 'icon-globe'
     },
     {
       name: 'Seller',
@@ -29,11 +34,6 @@ export default {
       name: 'Recieved',
       url: '/recieved/list',
       icon: 'icon-briefcase'
-    },
-    {
-      name: 'Pick up',
-      url: '/pickup/list',
-      icon: 'icon-home'
     }
   ],
 };
