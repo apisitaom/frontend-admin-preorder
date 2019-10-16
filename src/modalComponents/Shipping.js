@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Row, Col, Divider, Table } from 'antd'
 export default class Shipping extends Component {
     render() {
-        console.log('MODAL SHIPPING : ', this.props);
         const columns = [
             {
                 title: '#',
@@ -57,7 +56,7 @@ export default class Shipping extends Component {
                 <Col span={6}><b>ราคารวม :</b></Col>
                 <Col span={18}>{this.props.shipping.result.length > 0 && this.props.shipping.result[0].totalprice}</Col>
                 <Col span={6}><b>เหลือ :</b></Col>
-                <Col span={18}>{this.props.shipping.result[0].totalproduct} ชิ้น</Col> 
+                <Col span={18}>{this.props.shipping.result.length > 0 && this.props.shipping.result[0].totalproduct} ชิ้น</Col> 
                 <Row span={24} style={{marginBottom:'1%'}}>
                     <Table
                     columns={columns} 
