@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col, Divider, Table } from 'antd'
+import { imagurl } from '../services/config/APIurl'
 export default class Payment extends Component {
     render() {
+        console.log('PAYMENT MODAL : ', this.props.payment);
         const columns = [
             {
                 title: '#',
@@ -42,6 +44,16 @@ export default class Payment extends Component {
         ]
         return (
             <div>
+            <Divider orientation="left">หลักฐานการโอน</Divider>
+            <Col offset={4} span={16} style={{ 
+                justifyContent: 'center',
+                alignItems: 'center',
+             }}>
+                <Row type="flex" style={{ 
+                    borderStyle: 'groove' }}>
+                    <img src={this.props.payment.slip !== null && imagurl+this.props.payment.slip} style={{ width: '100%' }} alt='payment-slip'/>
+                </Row>
+            </Col>
             <Divider orientation="left">วันที่ส่ง</Divider>
                 <Row span={24} style={{marginBottom:'1%'}}>
                     <Col span={6}><b>วันที่สั่ง :</b></Col>
@@ -54,9 +66,9 @@ export default class Payment extends Component {
                 </Row>
             <Divider orientation="left">การรายที่สั่ง</Divider>
                 <Col span={6}><b>ราคารวม :</b></Col>
-                <Col span={18}>{this.props.payment.result[0].totalprice}</Col>
+                <Col span={18}><h3>{this.props.payment.result.length > 0 && this.props.payment.result[0].totalprice} บาท</h3></Col>
                 <Col span={6}><b>เหลือ :</b></Col>
-                <Col span={18}>{this.props.payment.result[0].totalproduct} ชิ้น</Col> 
+                <Col span={18}><h3>{this.props.payment.result.length > 0 && this.props.payment.result[0].totalproduct} ชิ้น</h3> </Col> 
                 <Row span={24} style={{marginBottom:'1%'}}>
                     <Table
                     columns={columns} 

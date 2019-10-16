@@ -75,7 +75,7 @@ export default class PaymentFrom extends Component {
                 )}          
             },
             {
-                title: 'รายละเอียด',
+                title: '#',
                 render: (text, record, index) =>
                     <span>
                         <Button type='link' onClick={() => this.showModal(index)}>ดู</Button>
