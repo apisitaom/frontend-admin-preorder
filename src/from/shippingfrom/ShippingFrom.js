@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Table, Button, Modal } from 'antd'
+import { Card, Table, Button, Modal, Tag } from 'antd'
 import ShippingModal from '../../modalComponents/Shipping'
 export default class RecieveFrom extends Component {
     state={
@@ -47,6 +47,13 @@ export default class RecieveFrom extends Component {
                 title: 'สถานะการจัดส่ง',
                 dataIndex: 'shippingstatusname',
                 key: 'shippingstatusname',
+                render: text => {
+                    return (
+                        <Tag color={text === "รับสินค้าแล้ว" ?  "green" : "geekblue"} key={text}>
+                        {text.toLowerCase()}
+                      </Tag>
+                    )
+                }
             },
             {
                 title: 'ที่อยู่',

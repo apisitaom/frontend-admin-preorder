@@ -25,7 +25,7 @@ export default class Dashboard extends Component {
               />
           </Col>
         </Row>
-        <Row gutter={4}>
+        <Row gutter={4} style={{ padding:'4px' }}>
           <Col span={12}>
             <TopReionFrom 
             /> 

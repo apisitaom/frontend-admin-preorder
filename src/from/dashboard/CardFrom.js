@@ -4,12 +4,18 @@ export default class CardFrom extends Component {
     render() {
         const backgroundStype1 ={
             background: '#FF2442',
+            textAlign: 'center',
+            borderRadius: 10,
         }
         const backgroundStype2 ={
-            background: '#5EC440'
+            background: '#5EC440',
+            textAlign: 'center',
+            borderRadius: 10,
         }
         const backgroundStype3 ={
-            background: '#558CD4'
+            background: '#558CD4',
+            textAlign: 'center',
+            borderRadius: 10,
         }
         return (
             <div style={{ padding: '30px' }}>

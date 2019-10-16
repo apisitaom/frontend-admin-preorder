@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Table, Button, Modal } from 'antd'
+import { Card, Table, Button, Modal, Tag } from 'antd'
 import PaymentModal from '../../modalComponents/Payment'
 export default class PaidFrom extends Component {
     state={
@@ -39,6 +39,13 @@ export default class PaidFrom extends Component {
                 title: 'สถานะการจ่าย',
                 dataIndex: 'statusname',
                 key: 'statusname',
+                render: text => {
+                    return (
+                        <Tag color="green" key={text}>
+                        {text.toLowerCase()}
+                        </Tag>   
+                    )
+                }
             },
             {
                 title: 'รายละเอียด',
