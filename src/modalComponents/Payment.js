@@ -3,7 +3,6 @@ import { Row, Col, Divider, Table } from 'antd'
 import { imagurl } from '../services/config/APIurl'
 export default class Payment extends Component {
     render() {
-        console.log('PAYMENT MODAL : ', this.props.payment);
         const columns = [
             {
                 title: '#',
@@ -51,7 +50,7 @@ export default class Payment extends Component {
              }}>
                 <Row type="flex" style={{ 
                     borderStyle: 'groove' }}>
-                    <img src={this.props.payment.slip !== null && imagurl+this.props.payment.slip} style={{ width: '100%' }} alt='payment-slip'/>
+                    <img src={this.props.payment.slip !== null && imagurl+this.props.payment.slip} style={{ width: '100%' }} alt='seller-profile' />
                 </Row>
             </Col>
             <Divider orientation="left">วันที่ส่ง</Divider>

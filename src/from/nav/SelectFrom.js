@@ -10,15 +10,11 @@ export default class SelectFrom extends Component {
                         <Col span={12}>
                             <Input 
                             placeholder='ชื่อร้านค้า'
-                            // value={this.state.shopname} 
-                            // onChange={(e)=>this.setState({shopname: e.target.value})}
                             />
                         </Col>
                         <Col span={12}>
                             <Input 
                             placeholder='Email' 
-                            // value={this.state.email}
-                            // onChange={(e)=>this.setState({email: e.target.value})}
                             />
                         </Col>
                     </Row>
@@ -27,14 +23,11 @@ export default class SelectFrom extends Component {
                             <DatePicker 
                             placeholder='Select registerd date' 
                             style={{ width: '100%' }} 
-                            // onChange={this.dateOnChange}
                             />
                         </Col>
                         <Col span={12}>
                             <Select 
                             style={{ width: '100%' }}
-                            // onChange={this.selectOnChange}
-                            // value={this.state.status}
                             value="สถานะร้านค้า"
                             >
                                 <Option value='non'>Select active status</Option>

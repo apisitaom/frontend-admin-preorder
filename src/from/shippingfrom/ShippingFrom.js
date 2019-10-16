@@ -50,7 +50,7 @@ export default class RecieveFrom extends Component {
                 render: text => {
                     return (
                         <Tag color={text === "รับสินค้าแล้ว" ?  "green" : "geekblue"} key={text}>
-                        {text.toLowerCase()}
+                        {text}
                       </Tag>
                     )
                 }
