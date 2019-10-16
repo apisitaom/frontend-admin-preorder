@@ -3,11 +3,18 @@ import TopSellerFrom from '../../from/dashboard/TopSellerFrom'
 import TopReionFrom from '../../from/dashboard/TopReionFrom'
 import LineChart from '../../from/dashboard/LineChart'
 import PieChart from '../../from/dashboard/PieChart'
+import CardFrom from '../../from/dashboard/CardFrom'
 import { Card, Col, Row } from 'antd'
 export default class Dashboard extends Component {
   render() {
     return (
       <Card>
+        <Row>
+          <Col span={24}>
+            <CardFrom 
+            />
+          </Col>
+        </Row>
         <Row gutter={4}>
           <Col span={16}>
             <LineChart 

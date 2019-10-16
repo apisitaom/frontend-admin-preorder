@@ -1,4 +1,4 @@
-import { Fetch, FetchForm } from './Fetch'
+import { Fetch } from './Fetch'
 //------------------ ADMIN -------------------
 export const login = async(data) => {
     const res = await Fetch("POST", '', '/admin/login', data)
