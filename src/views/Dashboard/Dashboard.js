@@ -1,10 +1,34 @@
 import React, { Component } from 'react'
+import TopSellerFrom from '../../from/dashboard/TopSellerFrom'
+import TopReionFrom from '../../from/dashboard/TopReionFrom'
+import LineChart from '../../from/dashboard/LineChart'
+import PieChart from '../../from/dashboard/PieChart'
+import { Card, Col, Row } from 'antd'
 export default class Dashboard extends Component {
   render() {
     return (
-      <div >
-        <h1>Dashboard</h1>
-    </div>
+      <Card>
+        <Row gutter={4}>
+          <Col span={16}>
+            <LineChart 
+            />
+          </Col>
+          <Col span={8}> 
+            <PieChart 
+              />
+          </Col>
+        </Row>
+        <Row gutter={4}>
+          <Col span={12}>
+            <TopReionFrom 
+            /> 
+          </Col>
+          <Col span={12}>
+            <TopSellerFrom 
+            />
+          </Col>
+        </Row>
+      </Card>
     )
   }
 }

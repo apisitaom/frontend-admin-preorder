@@ -21,7 +21,6 @@ export default class RecieveFrom extends Component {
         })
     }
     render() {
-        console.log(this.props);
         const columns = [
             {
                 title: '#',
