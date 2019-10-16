@@ -36,3 +36,26 @@ export const shippingRecieve = async (data, token = "") => {
     const res = await Fetch("GET", token, `/shipping/recieve`, data);
     return res;
 };
+
+//DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD
+//------------------ CardFrom -------------------
+export const totalSale = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/admin/sales`, data);
+    return res;
+};
+export const totalSeller = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/admin/amount`, data);
+    return res;
+};
+export const totalCustomer = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/admin/customer`, data);
+    return res;
+};
+//------------------ LineChart -------------------
+
+//------------------ PieChart -------------------
+
+//------------------ TopReionFrom -------------------
+
+//------------------ TopSellerFrom -------------------
+
