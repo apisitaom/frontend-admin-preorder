@@ -44,6 +44,7 @@ export const shippingRecieve = async (data, token = "") => {
 };
 
 //DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD-DASHBOARD
+
 //------------------ CardFrom -------------------
 export const totalSale = async (data, token = "") => {
     const res = await Fetch("GET", token, `/admin/sales`, data);
@@ -58,9 +59,15 @@ export const totalCustomer = async (data, token = "") => {
     return res;
 };
 //------------------ LineChart -------------------
-
+export const LineChart = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/admin/graph`, data);
+    return res;
+};
 //------------------ PieChart -------------------
-
+export const PieChart = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/admin/user`, data);
+    return res;
+};
 //------------------ TopReionFrom -------------------
 export const topRegion = async (data, token = "") => {
     const res = await Fetch("GET", token, `/admin/provinces`, data);

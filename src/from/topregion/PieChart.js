@@ -4,7 +4,7 @@ import { CardHeader } from 'reactstrap'
 import { Card, Row, Col, Button } from 'antd'
 const ButtonGroup = Button.Group;
 export default class PieChart extends Component {
-  
+    
     render() {
         const pie1 = {
             labels: [
