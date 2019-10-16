@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Table, Button, Modal, Tag } from 'antd'
-import PaymentModal from '../../modalComponents/Payment'
+import PaidModal from '../../modalComponents/Paid'
 export default class PaidFrom extends Component {
     state={
         visible: false
@@ -63,7 +63,7 @@ export default class PaidFrom extends Component {
                     footer={null}
                     width='70%'
                 >
-                    <PaymentModal 
+                    <PaidModal 
                     payment={this.props.payment}
                     />
                 </Modal>

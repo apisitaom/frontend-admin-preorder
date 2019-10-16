@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Table, Button,Form, Select, Modal, Tag } from 'antd' 
+import { Card, Table, Button,Form, Select, Modal } from 'antd' 
 import Seller from '../../../modalComponents/Seller'
 import { 
     sellersGet,

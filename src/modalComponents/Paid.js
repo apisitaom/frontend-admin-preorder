@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Divider, Table } from 'antd'
-export default class Payment extends Component {
+export default class Paid extends Component {
     render() {
         const columns = [
             {
