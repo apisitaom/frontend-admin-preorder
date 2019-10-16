@@ -9,8 +9,14 @@ export const sellersGet = async (data, token = "") => {
     const res = await Fetch("GET", token, `/seller/all`, data);
     return res;
 };
+
 export const sellerRole = async (data, token = "") => {
     const res = await Fetch("POST", token, `/seller/role`, data);
+    return res;
+};
+//------------------ ORDER -------------------
+export const getOrder = async (data, token = "") => {
+    const res = await Fetch("GET", token, `/order/admin/order`, data);
     return res;
 };
 //------------------ SHIPPING -------------------
