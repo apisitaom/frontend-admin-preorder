@@ -34,7 +34,7 @@ export default class PieChart extends Component {
             ],
             datasets: [
               {
-                data: [300, 50, 100, 45, 150],
+                data: [300, 50, 100, 45],
                 backgroundColor: [
                   '#FF6384',
                   '#36A2EB',
