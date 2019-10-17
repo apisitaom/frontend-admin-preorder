@@ -11,7 +11,6 @@ export default class PieChart extends Component {
     this.props.getPieChart(e.target.value);
   }
     render() {
-      console.log('Pie Chart :', [`${this.props.ages}`]);
         const pie1 = {
             labels: [
               'หญิง',

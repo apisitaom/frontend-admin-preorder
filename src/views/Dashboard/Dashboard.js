@@ -33,6 +33,8 @@ export default class Dashboard extends Component {
 
     this.getTopRegion();
     this.getTopSeller();
+
+    this.getPieChart('day');
   }
   getTotalSale = async () => {
     const get = await totalSale();
