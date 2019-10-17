@@ -8,8 +8,6 @@ export default class LineChart extends Component {
   onClickSelect = async (e) => {
     this.props.getLineChart(e.target.value);
   }  
-  // dates
-  // sales
   render() {
         const line = {
             labels: this.props.dates,

@@ -22,10 +22,12 @@ export default class PieChart extends Component {
                 backgroundColor: [
                   '#FF6384',
                   '#36A2EB',
+                  '#FFCE56',
                 ],
                 hoverBackgroundColor: [
                   '#FF6384',
                   '#36A2EB',
+                  '#FFCE56',
                 ],
               }],
           };

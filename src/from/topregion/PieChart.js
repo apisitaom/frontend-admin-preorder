@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import { Pie } from 'react-chartjs-2'
 import { CardHeader } from 'reactstrap'
+import {province} from '../../datas/provinceOfThailand'
 import { Card, Row, Col, Button, Select } from 'antd'
 const ButtonGroup = Button.Group;
 const { Option } = Select
 export default class PieChart extends Component {
   onClickSelect = async (e) => {
-    console.log('PieChart', e);
-    // this.props.getTopRegion(e.target.value);
+    this.props.getTopRegion(e.target.value);
   }
+  onClickSelectProvince = async (e) => {
+    this.props.getTopRegion(e);
+  } 
     render() {
-      console.log(this.props.amountages);
         const pie1 = {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
           
             labels: this.props.ages,
@@ -61,7 +63,13 @@ export default class PieChart extends Component {
                       <Button value={'month'}>เดือน</Button>
                       <Button value={'year'}>ปี</Button>
                     </ButtonGroup>
-
+                    <Select 
+                    style={{width: '35%'}} 
+                    placeholder="เลือกจังหวัด"
+                    onSelect={ (e) => this.onClickSelectProvince(e)}
+                    >
+                      {province.map(item=><Option value={item.PROVINCE_NAME}>{item.PROVINCE_NAME}</Option>)}
+                    </Select>
                         <Row gutter={4}>
                             <Col span={12}>
                             <h4>อายุ</h4>
