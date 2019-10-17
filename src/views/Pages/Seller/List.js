@@ -5,7 +5,6 @@ import {
     sellersGet,
     sellerRole
  } from "../../../services/API";
- import Selectfrom from '../../../from/nav/SelectFrom'
  const { Option } = Select
 export class List extends Component {
     state = {
@@ -135,11 +134,7 @@ export class List extends Component {
                     />
                 </Modal>
 
-                <Selectfrom 
-                />
-
                 <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SELLERS" bordered={false}>
-                <Button type='link' onClick={this.showModal}>View detail</Button>
                     <Table
                         dataSource = {this.state.sellers}
                         columns={columns}
