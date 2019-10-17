@@ -7,10 +7,10 @@ const ButtonGroup = Button.Group;
 const { Option } = Select
 export default class PieChart extends Component {
   onClickSelect = async (e) => {
-    this.props.getTopRegion(e.target.value);
+    this.props.getTopRegion(e.target.value, this.props.province);
   }
   onClickSelectProvince = async (e) => {
-    this.props.getTopRegion(e);
+    this.props.getTopRegion(this.props.type, e);
   } 
     render() {
         const pie1 = {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
@@ -65,7 +65,7 @@ export default class PieChart extends Component {
                     </ButtonGroup>
                     <Select 
                     style={{width: '35%'}} 
-                    placeholder="เลือกจังหวัด"
+                    placeholder= {this.props.province}
                     onSelect={ (e) => this.onClickSelectProvince(e)}
                     >
                       {province.map(item=><Option value={item.PROVINCE_NAME}>{item.PROVINCE_NAME}</Option>)}

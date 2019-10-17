@@ -18,7 +18,7 @@ export default class List extends Component {
                 this.setState({
                     type: type,
                     province: province
-                })
+                }, () => console.log('TOP RESION => ', this.state.type, this.state.province))
                 this.setState({data : {value: type}}, async () => {
                     const get = await topPieChart(this.state.data);
                     get.code === 200 && 
@@ -48,6 +48,8 @@ export default class List extends Component {
         return (
             <div>
                 <PieChart
+                type={this.state.type}
+                province={this.state.province}
                 ages={this.state.ages !== undefined && this.state.ages}
                 amountages={this.state.amountages !== undefined && this.state.amountages}
                 products={this.state.products !== undefined && this.state.products}
