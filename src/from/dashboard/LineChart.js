@@ -51,7 +51,7 @@ export default class LineChart extends Component {
                     <Row>
                     <ButtonGroup onClick={(e) => this.onClickSelect(e)}>
                     <Button value={'day'} >วัน</Button>
-                      <Button value={'munth'}>เดือน</Button>
+                      <Button value={'month'}>เดือน</Button>
                       <Button value={'year'}>ปี</Button>
                     </ButtonGroup>
                         <Col style={{height:'520px'}}>

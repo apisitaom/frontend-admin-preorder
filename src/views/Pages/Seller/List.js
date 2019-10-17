@@ -109,7 +109,7 @@ export class List extends Component {
                 title: 'สถานะ',
                 key: 'active',
                 render: (text, record, index) => 
-              { 
+              {                   
                   return (
                     <Select
                     value={String(record.active)}

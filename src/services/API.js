@@ -78,3 +78,8 @@ export const topSeller = async (data, token = "") => {
     const res = await Fetch("GET", token, `/admin/sellerstop/10`, data);
     return res;
 };
+//------------------ TopReionPieChart -------------------
+export const topPieChart = async (data, token = "") => {
+    const res = await Fetch("POST", token, `/admin/customerGroup`, data);
+    return res;
+};

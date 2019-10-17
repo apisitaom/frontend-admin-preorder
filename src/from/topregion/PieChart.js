@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
 import { Pie } from 'react-chartjs-2'
 import { CardHeader } from 'reactstrap'
-import { Card, Row, Col, Button } from 'antd'
+import { Card, Row, Col, Button, Select } from 'antd'
 const ButtonGroup = Button.Group;
+const { Option } = Select
 export default class PieChart extends Component {
   onClickSelect = async (e) => {
     console.log('PieChart', e);
-    // this.props.getPieChart(e.target.value);
+    // this.props.getTopRegion(e.target.value);
   }
     render() {
-      console.log(this.props);
-        const pie1 = {
-            labels: [
-              'วัยรุ่น',
-              'ผู้ใหญ่',
-              'ขรา',
-            ],
+      console.log(this.props.amountages);
+        const pie1 = {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+          
+            labels: this.props.ages,
             datasets: [
               {
-                data: [300, 50, 100],
+                data: this.props.amountages,
                 backgroundColor: [
                   '#FF6384',
                   '#36A2EB',
@@ -32,16 +30,10 @@ export default class PieChart extends Component {
               }],
           };
           const pie2 = {
-            labels: [
-              'สินค้า 1',
-              'สินค้า 2',
-              'สินค้า 3',
-              'สินค้า 4',
-              'สินค้า 5'
-            ],
+            labels: this.props.products,
             datasets: [
               {
-                data: [300, 50, 100, 45, 150],
+                data: this.props.amountproducts,
                 backgroundColor: [
                   '#FF6384',
                   '#36A2EB',
@@ -66,9 +58,10 @@ export default class PieChart extends Component {
                     </CardHeader>
                     <ButtonGroup onClick={(e) => this.onClickSelect(e)}> 
                       <Button value={'day'} >วัน</Button>
-                      <Button value={'munth'}>เดือน</Button>
+                      <Button value={'month'}>เดือน</Button>
                       <Button value={'year'}>ปี</Button>
                     </ButtonGroup>
+
                         <Row gutter={4}>
                             <Col span={12}>
                             <h4>อายุ</h4>

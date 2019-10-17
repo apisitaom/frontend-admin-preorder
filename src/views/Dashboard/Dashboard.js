@@ -36,7 +36,7 @@ export default class Dashboard extends Component {
     this.getTopRegion();
     this.getTopSeller();
 
-    this.getPieChart('month');
+    this.getPieChart('day');
     this.getLineChart('day');
   }
   getTotalSale = async () => {
@@ -92,7 +92,6 @@ export default class Dashboard extends Component {
       }))
     })}
   render() {
-    // console.log('STATE : ', this.state);
     return (
       <Card>
         <Row>
