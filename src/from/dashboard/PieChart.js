@@ -32,9 +32,7 @@ export default class PieChart extends Component {
           const pie2 = {
             labels: [
               'วัยรุ่น',
-              'กลางคน',
               'ผู้ใหญ่',
-              'ชรา',
             ],
             datasets: [
               {
@@ -42,14 +40,10 @@ export default class PieChart extends Component {
                 backgroundColor: [
                   '#FF6384',
                   '#36A2EB',
-                  '#FFCE56',
-                  '#00FF00',
                 ],
                 hoverBackgroundColor: [
                   '#FF6384',
                   '#36A2EB',
-                  '#FFCE56',
-                  '#00FF00',
                 ],
               }],
           };
@@ -59,7 +53,7 @@ export default class PieChart extends Component {
                     <CardHeader><h5>กลุ่มผู้ใช้</h5></CardHeader>
                     <ButtonGroup onClick={(e) => this.onClickSelect(e)}>
                     <Button value={'day'} >วัน</Button>
-                      <Button value={'munth'}>เดือน</Button>
+                      <Button value={'month'}>เดือน</Button>
                       <Button value={'year'}>ปี</Button>
                     </ButtonGroup>
                     <Row>
