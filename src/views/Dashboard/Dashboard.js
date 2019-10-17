@@ -22,6 +22,8 @@ export default class Dashboard extends Component {
     topregions: [],
     topsellers: [],
     linecharts: [],
+    sales: [],
+    dates: [],
     piecharts: [],
     ages: [],
     genders: []
@@ -35,6 +37,7 @@ export default class Dashboard extends Component {
     this.getTopSeller();
 
     this.getPieChart('day');
+    this.getLineChart('day');
   }
   getTotalSale = async () => {
     const get = await totalSale();
@@ -66,10 +69,15 @@ export default class Dashboard extends Component {
       topsellers: get.data
     })
   }
-  getLineChart = async (data) => {
-    const get = await LineCharts(data);
-    this.setState({
-      linecharts: get.data
+  getLineChart = async (type) => {
+    this.setState({reslut: {value: type}},async () => {
+      const get = await LineCharts(this.state.reslut);
+      get.code === 200 && this.setState({
+        linecharts: get.data
+      }, () => this.setState({
+        sales: this.state.linecharts.map(item => item.sum),
+        dates: this.state.linecharts.map(item => item.date)
+      }))
     })
   }
   getPieChart = async (type) => {
@@ -84,7 +92,7 @@ export default class Dashboard extends Component {
       }))
     })}
   render() {
-    console.log('STATE : ', this.state);
+    // console.log('STATE : ', this.state);
     return (
       <Card>
         <Row>
@@ -98,7 +106,10 @@ export default class Dashboard extends Component {
         </Row>
         <Row gutter={4}>
           <Col span={16}>
-            <LineChart 
+            <LineChart
+            dates={this.state.dates !== null && this.state.dates}
+            sales={this.state.sales !== null && this.state.sales}
+            getLineChart={this.getLineChart !== null && this.getLineChart}
             />
           </Col>
           <Col span={8}> 

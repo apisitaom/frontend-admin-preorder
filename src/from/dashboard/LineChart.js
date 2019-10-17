@@ -5,9 +5,14 @@ import { CardHeader } from 'reactstrap';
 import { Card, Row, Col, Button } from 'antd'
 const ButtonGroup = Button.Group;
 export default class LineChart extends Component {
-    render() {
+  onClickSelect = async (e) => {
+    this.props.getLineChart(e.target.value);
+  }  
+  // dates
+  // sales
+  render() {
         const line = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            labels: this.props.dates,
             datasets: [
               {
                 label: 'ยอดขาย',
@@ -28,7 +33,7 @@ export default class LineChart extends Component {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                data: [65, 59, 80, 81, 56, 55, 40, 60, 120, 209, 55, 150],
+                data: this.props.sales,
               },
             ],
           };
@@ -44,7 +49,7 @@ export default class LineChart extends Component {
                 <Card>
                     <CardHeader><h5>ยอดขาย</h5></CardHeader>
                     <Row>
-                    <ButtonGroup>
+                    <ButtonGroup onClick={(e) => this.onClickSelect(e)}>
                     <Button value={'day'} >วัน</Button>
                       <Button value={'munth'}>เดือน</Button>
                       <Button value={'year'}>ปี</Button>

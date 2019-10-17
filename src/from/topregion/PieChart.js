@@ -5,7 +5,7 @@ import { Card, Row, Col, Button } from 'antd'
 const ButtonGroup = Button.Group;
 export default class PieChart extends Component {
   onClickSelect = async (e) => {
-    console.log('PieChart');
+    console.log('PieChart', e);
     // this.props.getPieChart(e.target.value);
   }
     render() {
