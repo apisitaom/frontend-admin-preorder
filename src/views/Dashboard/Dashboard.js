@@ -26,7 +26,7 @@ export default class Dashboard extends Component {
     dates: [],
     piecharts: [],
     ages: [],
-    genders: []
+    genders: [],
   }
   UNSAFE_componentWillMount () {
     this.getTotalSale();

@@ -7,7 +7,7 @@ export default class List extends Component {
      ages: [],
      amountages: [],
      products: [],   
-     amountproducts:[],
+     amountproducts:[], 
      type: 'year',
      province: 'กรุงเทพมหานคร'
     }
@@ -18,7 +18,7 @@ export default class List extends Component {
                 this.setState({
                     type: type,
                     province: province
-                }, () => console.log('TOP RESION => ', this.state.type, this.state.province))
+                }   )
                 this.setState({data : {value: type}}, async () => {
                     const get = await topPieChart(this.state.data);
                     get.code === 200 && 

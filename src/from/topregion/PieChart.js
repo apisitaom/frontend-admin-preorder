@@ -68,7 +68,12 @@ export default class PieChart extends Component {
                     placeholder= {this.props.province}
                     onSelect={ (e) => this.onClickSelectProvince(e)}
                     >
-                      {province.map(item=><Option value={item.PROVINCE_NAME}>{item.PROVINCE_NAME}</Option>)}
+                      {province.map(item=><Option
+                      value={item.PROVINCE_NAME} 
+                      key={(row, index)=> index}
+                      >
+                      {item.PROVINCE_NAME}
+                        </Option>)}
                     </Select>
                         <Row gutter={4}>
                             <Col span={12}>
