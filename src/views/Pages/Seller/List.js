@@ -9,8 +9,6 @@ import {
 export class List extends Component {
     state = {
         sellers: [],
-        shopname: '',
-        email: '',
         status: 'non',
         active: false,
         updateSeller: []
@@ -20,7 +18,7 @@ export class List extends Component {
     }
     getSeller = async () => {
         const get = await sellersGet();
-        this.setState({
+        get.code === 200 && this.setState({
             sellers: get.data,
         });
     }
@@ -29,13 +27,6 @@ export class List extends Component {
     }
     dateOnChange = (date, dateString) => {
         this.setState({date: dateString})
-    }
-    clearSearchData = () =>{
-        this.setState({
-            shopname: '',
-            email: '',
-            status:'non'
-        })
     }
     showModal = async (index) => {
         this.setState({

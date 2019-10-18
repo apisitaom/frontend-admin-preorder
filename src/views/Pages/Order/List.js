@@ -18,7 +18,7 @@ export default class List extends Component {
         return (
             <div>
                 <Order 
-                orders={this.state.orders.length > 0 && this.state.orders}
+                orders={this.state.orders.length > 0 ? this.state.orders : []}
                 />
             </div>
         )

@@ -16,7 +16,7 @@ export const sellerRole = async (data, token = "") => {
 };
 //------------------ ORDER -------------------
 export const getOrder = async (data, token = "") => {
-    const res = await Fetch("GET", token, `/order/admin/order`, data);
+    const res = await Fetch("GET", token, `/admin/order`, data);
     return res;
 };
 //------------------ SHIPPING -------------------
