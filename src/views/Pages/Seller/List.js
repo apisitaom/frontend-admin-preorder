@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Table, Button,Form, Select, Modal } from 'antd' 
+import { Card, Table, Button,Form, Select, Modal, Tag } from 'antd' 
 import Seller from '../../../modalComponents/Seller'
 import { 
     sellersGet,
@@ -74,6 +74,13 @@ export class List extends Component {
                 title: 'ชื่อร้านค้า',
                 dataIndex: 'sellername',
                 key: 'sellername',
+                render: text => {
+                    return (
+                        <Tag color="#108ee9">
+                            {text}
+                        </Tag>
+                    )
+                }
             },
             {
                 title: 'อีเมล',
