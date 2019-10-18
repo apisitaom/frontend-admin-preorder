@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Row, Col } from 'antd'
+import { Card, Row, Col, Statistic, Icon } from 'antd'
 export default class CardFrom extends Component {
     render() {
         const backgroundStype1 ={
@@ -24,24 +24,28 @@ export default class CardFrom extends Component {
                     <Card 
                     style={ backgroundStype1 }
                     >
-                      <h3>ยอดขายรวม</h3>
-                      <h5>{this.props.totalsale} บาท</h5>
+                      <h3 style={{color:'white'}}>ยอดขายรวม</h3>
+                      <Statistic 
+                      valueStyle={{color: 'white'}} 
+                      value={this.props.totalsale} 
+                      prefix={<Icon 
+                        style={{ margin: '-22px 0px 0px -25px', position: 'absolute'}} type="like" />} />
                     </Card>
                   </Col>
                   <Col span={8}>
                     <Card 
                     style={ backgroundStype2 }
                     >
-                      <h3>จำนวนร้านค้าที่ร่วมรายการ</h3>
-                      <h5>{this.props.totalseller} ร้านค้า</h5>
+                      <h3 style={{color:'white'}}>จำนวนร้านค้าที่ร่วมรายการ</h3>
+                      <h5 style={{color:'white'}}>{this.props.totalseller} ร้านค้า</h5>
                     </Card>
                   </Col>
                   <Col span={8}>
                     <Card 
                     style={ backgroundStype3 }
                     >
-                    <h3>จำนวนผู้ใช้งาน</h3>
-                    <h5>{this.props.totalcustomer} ผู้ใช้</h5>
+                    <h3 style={{color:'white'}}>จำนวนผู้ใช้งาน</h3>
+                    <h5 style={{color:'white'}}>{this.props.totalcustomer} ผู้ใช้</h5>
                     </Card>
                   </Col>
                 </Row>
