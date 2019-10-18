@@ -54,7 +54,7 @@ export default class PaymentFrom extends Component {
                 key: 'statusname',
                 render: text => {
                     return (
-                        <Tag color="red" key={text}>
+                        <Tag color="orange" key={text}>
                         {text.toLowerCase()}
                         </Tag>   
                     )
