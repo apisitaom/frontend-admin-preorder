@@ -44,18 +44,6 @@ export default class RecieveFrom extends Component {
                 key: 'fullname',
             },
             {
-                title: 'สถานะการจัดส่ง',
-                dataIndex: 'shippingstatusname',
-                key: 'shippingstatusname',
-                render: text => {
-                    return (
-                        <Tag color={text === "รับสินค้าแล้ว" ?  "green" : "geekblue"} key={text}>
-                        {text}
-                      </Tag>
-                    )
-                }
-            },
-            {
                 title: 'ที่อยู่',
                 dataIndex: 'address',
                 key: 'address',
@@ -69,6 +57,18 @@ export default class RecieveFrom extends Component {
                 title: 'จังหวัด',
                 dataIndex: 'province',
                 key: 'province',
+            },
+            {
+                title: 'สถานะการจัดส่ง',
+                dataIndex: 'shippingstatusname',
+                key: 'shippingstatusname',
+                render: text => {
+                    return (
+                        <Tag color={text === "รับสินค้าแล้ว" ?  "green" : "geekblue"} key={text}>
+                        {text}
+                      </Tag>
+                    )
+                }
             },
             {
                 title: 'รายละเอียด',

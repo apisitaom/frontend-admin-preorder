@@ -55,13 +55,13 @@ export default class PieChart extends Component {
         return (
             <div>
                 <Card>
-                    <CardHeader>
-                        <h2>กลุ่มลูกค้า</h2>
+                    <CardHeader style={{backgroundColor: '#494d9b'}}>
+                        <h2 style={{color:'white'}}>กลุ่มลูกค้า</h2>
                     </CardHeader>
                     <ButtonGroup onClick={(e) => this.onClickSelect(e)} style={{padding: '5px'}}> 
-                      <Button value={'day'} >วัน</Button>
-                      <Button value={'month'}>เดือน</Button>
-                      <Button value={'year'}>ปี</Button>
+                      <Button value={'day'} style={{backgroundColor:'#5EC440'}}>วัน</Button>
+                      <Button value={'month'} style={{backgroundColor:'#5EC440'}}>เดือน</Button>
+                      <Button value={'year'} style={{backgroundColor:'#5EC440'}}>ปี</Button>
                     </ButtonGroup>
                     <Select 
                     style={{width: '35%', marginLeft: '10px', padding: '5px'}} 
