@@ -47,7 +47,7 @@ export default class LineChart extends Component {
                 <Card>
                     <CardHeader><h5>ยอดขาย</h5></CardHeader>
                     <Row>
-                    <ButtonGroup onClick={(e) => this.onClickSelect(e)}>
+                    <ButtonGroup onClick={(e) => this.onClickSelect(e)} style={{padding: '5px'}}>
                     <Button value={'day'} >วัน</Button>
                       <Button value={'month'}>เดือน</Button>
                       <Button value={'year'}>ปี</Button>
