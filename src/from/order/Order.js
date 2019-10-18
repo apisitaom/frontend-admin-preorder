@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Row, Col, Table } from 'antd'
+import { Card, Row, Col, Table, Tag } from 'antd'
 export default class Order extends Component {
     render() {
         const columns = [
@@ -18,6 +18,13 @@ export default class Order extends Component {
                 title: 'ลูกค้าที่สั่งซื้อ',
                 dataIndex: 'fullname',
                 key: 'fullname',
+                render: text => {
+                    return (
+                        <Tag color="#2db7f5" key={text}>
+                            {text}
+                        </Tag>
+                    )
+                }
             },
             {
                 title: 'เบอร์',
@@ -28,6 +35,13 @@ export default class Order extends Component {
                 title: 'จำนวนสินค้าที่สั่ง',
                 dataIndex: 'sum',
                 key: 'sum',
+                render: text => {
+                    return (
+                    <Tag color="#108ee9">
+                        {text}
+                        </Tag>
+                    )
+                }
             },
             {
                 title: 'ที่อยู่',
@@ -58,11 +72,25 @@ export default class Order extends Component {
                 title: 'สถานะการส่ง',
                 dataIndex: 'shippingstatusname',
                 key: 'shippingstatusname',
+                render: text => {
+                    return (
+                        <Tag color={text === "ยังไม่จัดส่งสินค้า" ? "gold" : text === "ส่งสินค้าเรียบร้อยแล้ว" ? "blue" : text === "รับสินค้าแล้ว" ? "green" : "purple"}>
+                            {text}
+                        </Tag>
+                    )
+                }
             },
             {
                 title: 'สถานะการจ่าย',
                 dataIndex: 'statusname',
                 key: 'statusname',
+                render: text => {
+                    return (
+                        <Tag color={text === "รอชำระ" ? "gold" : text === "รอตรวจสอบ" ? "blue" : text === "ชำระเงินแล้ว" ? "green" : "purple"}>
+                            {text}
+                        </Tag>
+                    )
+                }
             }
         ]
         return (
