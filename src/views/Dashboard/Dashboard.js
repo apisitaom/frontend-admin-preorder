@@ -27,6 +27,7 @@ export default class Dashboard extends Component {
     piecharts: [],
     ages: [],
     genders: [],
+    date: 'day'
   }
   UNSAFE_componentWillMount () {
     this.getTotalSale();
@@ -36,8 +37,8 @@ export default class Dashboard extends Component {
     this.getTopRegion();
     this.getTopSeller();
 
-    this.getPieChart('day');
-    this.getLineChart('day');
+    this.getPieChart(this.state.date);
+    this.getLineChart(this.state.date);
   }
   getTotalSale = async () => {
     const get = await totalSale();
