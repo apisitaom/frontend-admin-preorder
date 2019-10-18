@@ -15,7 +15,8 @@ export default class PaymentFrom extends Component {
     }
     changeStatusPayment = async (index, e) => {
         const data = {
-            payid: index.payid
+            payid: index.payid,
+            orderid: index.orderid
         }
         Modal.confirm({
             title: 'update status payment',

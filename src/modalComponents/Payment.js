@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Divider, Table } from 'antd'
 import { imagurl } from '../services/config/APIurl'
+import picture from '../assets/img/no-image-icon.png'
 export default class Payment extends Component {
     render() {
         const columns = [
@@ -50,7 +51,7 @@ export default class Payment extends Component {
              }}>
                 <Row type="flex" style={{ 
                     borderStyle: 'groove' }}>
-                    <img src={this.props.payment.slip !== null && imagurl+this.props.payment.slip} style={{ width: '100%' }} alt='seller-profile' />
+                    <img src={this.props.payment.slip !== null ? imagurl+this.props.payment.slip : picture} style={{ width: '100%' }} alt='seller-profile' />
                 </Row>
             </Col>
             <Divider orientation="left">วันที่ส่ง</Divider>

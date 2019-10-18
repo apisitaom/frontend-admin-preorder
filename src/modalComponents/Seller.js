@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import { Row, Col, Divider } from 'antd'
 import { imagurl } from '../services/config/APIurl'
+import picture from '../assets/img/no-image-icon.png'
 export default class Seller extends Component {
     render() {
+        console.log(this.props.seller.photo);
+        
         return (
             <div>
                 <Row gutter={48}>
                     <Col span={8}>
                         <Row type="flex" style={{ justifyContent: 'center', borderStyle: 'groove' }}>
-                            <img src={imagurl+this.props.seller.photo} style={{ width: '70%' }} alt='seller-profile'/>
+                            <img src={typeof this.props.seller.photo !== null ? imagurl+this.props.seller.photo : picture } style={{ width: '70%' }} alt='seller-profile'/>
                         </Row>
                     </Col>
                     <Col span={16}>
