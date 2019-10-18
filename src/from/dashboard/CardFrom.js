@@ -29,15 +29,23 @@ export default class CardFrom extends Component {
                       valueStyle={{color: 'white'}} 
                       value={this.props.totalsale} 
                       prefix={<Icon 
-                        style={{ margin: '-22px 0px 0px -25px', position: 'absolute'}} type="like" />} />
+                      style={{ margin: '-22px 0px 0px -25px', position: 'absolute'}}
+                      type="like" />} 
+                      />
                     </Card>
                   </Col>
                   <Col span={8}>
                     <Card 
                     style={ backgroundStype2 }
                     >
-                      <h3 style={{color:'white'}}>จำนวนร้านค้าที่ร่วมรายการ</h3>
-                      <h5 style={{color:'white'}}>{this.props.totalseller} ร้านค้า</h5>
+                    <h3 style={{color:'white'}}>จำนวนร้านค้าที่ร่วมรายการ</h3>
+                    <Statistic 
+                    valueStyle={{color:'white'}} 
+                    value={this.props.totalseller} 
+                    prefix={<Icon
+                    style={{ margin: '-22px 0px 0px -25px', position: 'absolute'}} 
+                    type="shop" />} 
+                    />
                     </Card>
                   </Col>
                   <Col span={8}>
@@ -45,7 +53,13 @@ export default class CardFrom extends Component {
                     style={ backgroundStype3 }
                     >
                     <h3 style={{color:'white'}}>จำนวนผู้ใช้งาน</h3>
-                    <h5 style={{color:'white'}}>{this.props.totalcustomer} ผู้ใช้</h5>
+                    <Statistic 
+                    valueStyle={{color: 'white'}} 
+                    value={this.props.totalcustomer} 
+                    prefix={<Icon 
+                    style={{ margin: '-22px 0px 0px -25px', position: 'absolute'}} 
+                    type="user" />} 
+                    />
                     </Card>
                   </Col>
                 </Row>
