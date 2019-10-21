@@ -19,7 +19,7 @@ export default class PaidFrom extends Component {
                 title: '#',
                 dataIndex: 'key',
                 key: 'key',
-                width: '5%',
+                width: '10%',
                 render: (text, record, index) => (
                     <span key={index}>
                         {index + 1}
