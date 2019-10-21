@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Table, Button,Form, Select, Modal, Tag } from 'antd' 
 import Seller from '../../../modalComponents/Seller'
+import moment from 'moment'
 import { 
     sellersGet,
     sellerRole
@@ -69,6 +70,9 @@ export class List extends Component {
                 title: 'วันลงทะเบียน',
                 dataIndex: 'createdate',
                 key: 'createdate',
+                render: text => (
+                    <span>{moment(text).format('lll')}</span>
+                )
             },
             {
                 title: 'ชื่อร้านค้า',
