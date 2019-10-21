@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Table, Button, Modal, Select, Tag } from 'antd'
 import PaymentModal from '../../modalComponents/Payment'
+import moment from 'moment'
 const { Option } = Select
 export default class PaymentFrom extends Component {
     state={
@@ -43,6 +44,9 @@ export default class PaymentFrom extends Component {
                 title: 'วันที่จ่ายสินค้า',
                 dataIndex: 'createdate',
                 key: 'createdate',
+                render: text => (
+                    <span>{moment(text).format('lll')}</span>
+                )
             },
             {
                 title: 'ชื่อลูกค้าที่สั่งซื้อ',

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Table, Button, Modal, Tag } from 'antd'
 import PaidModal from '../../modalComponents/Paid'
+import moment from 'moment'
 export default class PaidFrom extends Component {
     state={
         visible: false
@@ -29,6 +30,9 @@ export default class PaidFrom extends Component {
                 title: 'วันที่จ่ายสินค้า',
                 dataIndex: 'createdate',
                 key: 'createdate',
+                render: text => (
+                    <span>{moment(text).format('lll')}</span>
+                )
             },
             {
                 title: 'ชื่อลูกค้าที่สั่งซื้อ',
