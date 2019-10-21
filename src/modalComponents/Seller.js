@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col, Divider } from 'antd'
 import { imagurl } from '../services/config/APIurl'
-import picture from '../assets/img/no-image-icon.png'
+import picture from '../assets/img/user.png'
 export default class Seller extends Component {
     render() {
-        console.log(this.props.seller.photo);
-        
         return (
             <div>
                 <Row gutter={48}>
