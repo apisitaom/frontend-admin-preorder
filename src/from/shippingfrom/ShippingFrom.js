@@ -5,7 +5,7 @@ import moment from 'moment'
 export default class RecieveFrom extends Component {
     state={
         visible: false
-    }
+    }   
     onCancel = () => {
         this.setState({visible: false})
     }

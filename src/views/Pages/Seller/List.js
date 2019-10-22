@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Table, Button,Form, Select, Modal, Tag } from 'antd' 
+import { Card, Table, Button,Form, Select, Modal, Tag, Row, Col, Input } from 'antd' 
 import Seller from '../../../modalComponents/Seller'
 import moment from 'moment'
 import { 
@@ -12,7 +12,9 @@ export class List extends Component {
         sellers: [],
         status: 'non',
         active: false,
-        updateSeller: []
+        updateSeller: [],
+        searchsellername: '',
+        search: false
     }
     UNSAFE_componentWillMount () {
         this.getSeller();
@@ -26,9 +28,11 @@ export class List extends Component {
     selectOnChange = value => {
         this.setState({status: value})
     }
-    dateOnChange = (date, dateString) => {
-        this.setState({date: dateString})
-    }
+    // dateOnChange = (date, dateString) => {
+    //     this.setState({date: dateString})<Search 
+    //     onSearch={this.onSearch}
+    //     />
+    // }
     showModal = async (index) => {
         this.setState({
             seller: this.state.sellers[index],
@@ -52,6 +56,23 @@ export class List extends Component {
     onUpdateSellerRole = async data =>{
         await sellerRole(data);
         await window.location.reload();
+    }
+    onSearch = async (data) => {
+        console.log('SELLER: ', data);
+    }
+    search = e => {
+        this.setState({searchsellername: e.target.value},()=> {
+            let dataSearch
+            if(this.state.searchsellername !== ''){
+                dataSearch = this.state.sellers.filter(value=> {
+                    return (value.sellername.toLowerCase().indexOf(this.state.searchsellername.toLowerCase()) > -1)
+                })
+                this.setState({dataSearch: [...dataSearch],search: true})
+            }else{
+                this.setState({search: false})
+            }
+        } 
+        )
     }
     render() {
         const columns = [
@@ -135,10 +156,19 @@ export class List extends Component {
                     <Seller seller={this.state.seller} 
                     />
                 </Modal>
-
-                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' }} title="SELLERS" bordered={false}>
+                <Row>
+                    <Col offset={16}>
+                        <Input 
+                        style={{width: '100%', textAlign: 'center'}}
+                        placeholder="ค้นหา/ชื่อร้านค้า ?"
+                        value={this.state.searchsellername}
+                        onChange={(e)=>this.search(e)}
+                        />
+                    </Col>
+                </Row>
+                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' , marginTop: '10px'}} title="SELLERS" bordered={false}>
                     <Table
-                        dataSource = {this.state.sellers}
+                        dataSource = {this.state.search ? this.state.dataSearch :  this.state.sellers}
                         columns={columns}
                         rowKey={(row, index)=> index}  
                     />
