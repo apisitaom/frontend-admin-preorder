@@ -13,7 +13,7 @@ export class List extends Component {
         status: 'non',
         active: false,
         updateSeller: [],
-        searchsellername: '',
+        searchname: '',
         search: false
     }
     UNSAFE_componentWillMount () {
@@ -52,11 +52,11 @@ export class List extends Component {
         await window.location.reload();
     }
     search = e => {
-        this.setState({searchsellername: e.target.value},()=> {
+        this.setState({searchname: e.target.value},()=> {
             let dataSearch
-            if(this.state.searchsellername !== ''){
+            if(this.state.searchname !== ''){
                 dataSearch = this.state.sellers.filter(value=> {
-                    return (value.sellername.toLowerCase().indexOf(this.state.searchsellername.toLowerCase()) > -1)
+                    return (value.sellername.toLowerCase().indexOf(this.state.searchname.toLowerCase()) > -1)
                 })
                 this.setState({dataSearch: [...dataSearch],search: true})
             }else{
@@ -150,14 +150,14 @@ export class List extends Component {
                 <Row>
                     <Col offset={16}>
                         <Input 
-                        style={{width: '100%', textAlign: 'center'}}
+                        style={{width: '100%', textAlign: 'center', height: '35px' }}
                         placeholder="ค้นหา/ชื่อร้านค้า ?"
-                        value={this.state.searchsellername}
+                        value={this.state.searchname}
                         onChange={(e)=>this.search(e)}
                         />
                     </Col>
                 </Row>
-                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' , marginTop: '10px'}} title="SELLERS" bordered={false}>
+                <Card style={{ boxShadow: '9px 9px 20px 0px rgba(0,0,0,0.23)', marginBottom: '2%' , marginTop: '5px'}} title="SELLERS" bordered={false}>
                     <Table
                         dataSource = {this.state.search ? this.state.dataSearch :  this.state.sellers}
                         columns={columns}
