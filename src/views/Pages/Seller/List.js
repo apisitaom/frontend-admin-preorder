@@ -28,11 +28,6 @@ export class List extends Component {
     selectOnChange = value => {
         this.setState({status: value})
     }
-    // dateOnChange = (date, dateString) => {
-    //     this.setState({date: dateString})<Search 
-    //     onSearch={this.onSearch}
-    //     />
-    // }
     showModal = async (index) => {
         this.setState({
             seller: this.state.sellers[index],
@@ -42,7 +37,6 @@ export class List extends Component {
     onCancel = () => {
         this.setState({visible: false})
     } 
-    
     changeStatus = async (index, e) => {
         const data = {
             sellerid: index.sellerid,
@@ -56,9 +50,6 @@ export class List extends Component {
     onUpdateSellerRole = async data =>{
         await sellerRole(data);
         await window.location.reload();
-    }
-    onSearch = async (data) => {
-        console.log('SELLER: ', data);
     }
     search = e => {
         this.setState({searchsellername: e.target.value},()=> {
