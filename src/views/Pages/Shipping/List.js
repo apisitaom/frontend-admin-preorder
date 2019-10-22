@@ -44,7 +44,7 @@ export default class List extends Component {
                     <Col offset={16}>
                         <Input 
                         style={{width: '100%', textAlign: 'center', height: '35px' }}
-                        placeholder="ค้นหา/ชื่อร้านค้า ?"
+                        placeholder="ค้นหา/ชื่อลูกค้า ?"
                         value={this.state.searchname}
                         onChange={(e)=>this.search(e)}
                         />
