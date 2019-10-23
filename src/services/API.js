@@ -51,7 +51,7 @@ export const totalSale = async (data, token = "") => {
     return res;
 };
 export const totalSeller = async (data, token = "") => {
-    const res = await Fetch("GET", token, `/admin/amount`, data);
+    const res = await Fetch("GET", token, `/admin/seller`, data);
     return res;
 };
 export const totalCustomer = async (data, token = "") => {
