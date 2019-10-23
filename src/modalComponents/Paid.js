@@ -15,6 +15,7 @@ export default class Paid extends Component {
                 )
             },
             {
+                width: '20%',
                 title: 'ชื่อสินค้า',
                 dataIndex: 'proname',
                 key: 'proname',
