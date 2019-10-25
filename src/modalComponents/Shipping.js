@@ -54,10 +54,10 @@ export default class Shipping extends Component {
                     <Col span={18}>{this.props.shipping.fullname}</Col>
                 </Row>
             <Divider orientation="left">การรายที่สั่ง</Divider>
-                <Col span={6}><b>ราคารวม :</b></Col>
+                {/* <Col span={6}><b>ราคารวม :</b></Col>
                 <Col span={18}><h3>{this.props.shipping.result.length > 0 && this.props.shipping.result[0].totalprice} บาท</h3></Col>
                 <Col span={6}><b>เหลือ :</b></Col>
-                <Col span={18}><h3>{this.props.shipping.result.length > 0 && this.props.shipping.result[0].totalproduct} ชิ้น</h3></Col> 
+                <Col span={18}><h3>{this.props.shipping.result.length > 0 && this.props.shipping.result[0].totalproduct} ชิ้น</h3></Col>  */}
                 <Row span={24} style={{marginBottom:'1%'}}>
                     <Table
                     columns={columns} 

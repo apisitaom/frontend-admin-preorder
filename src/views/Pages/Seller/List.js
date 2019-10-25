@@ -62,9 +62,7 @@ export class List extends Component {
             }else{
                 this.setState({search: false})
             }
-        } 
-        )
-    }
+        })}
     render() {
         const columns = [
             {

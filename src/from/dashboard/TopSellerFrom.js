@@ -23,7 +23,7 @@ export default class TopSellerFrom extends Component {
         return (
             <div>
                 <Card>
-                    <CardHeader style={{backgroundColor: '#494d9b'}}><h5 style={{color:'white'}}>ยอดผู้ใช้ตามภูมิภาค</h5></CardHeader>
+                    <CardHeader style={{backgroundColor: '#494d9b'}}><h5 style={{color:'white'}}>TOP ร้านค้า</h5></CardHeader>
                     <Row>
                         <Col>
                             <Table
