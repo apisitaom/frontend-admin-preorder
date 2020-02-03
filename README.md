@@ -1,6 +1,10 @@
 #### Framework 
 - React | Design by Core-UI and Ant Design
 
+## รายละเอียด
+- มีการ Search แบบค้นหาเลยเมื่อพิมพ์
+- มีการ ใช้ Line Charts, Pie Charts ของ chart.js  
+
 ![Screenshot from 2019-10-21 11-00-30 (2)](https://user-images.githubusercontent.com/42701669/73665034-038f7b00-46d3-11ea-8368-b9c09e67a636.png)
 
 
